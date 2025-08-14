@@ -1,0 +1,164 @@
+<!-- <footer class="bg-dark text-white text-center p-3">
+    <div class="container">
+      <p>&copy; 2025 Destina1. All rights reserved.</p>
+    </div>
+  </footer> -->
+   <section class="contact-blks">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 no-gap" *ngFor="let box of contactBoxes">
+          <i class="{{ box.icon }}"></i>
+          <h3 class="heading2">{{ box.title }}</h3>
+          <p>{{ box.description }}</p>
+          <a style="color: #55565A;" href="#" class="heading3">
+            Learn More <i class="fas fa-angle-right" style="font-size: 14px; color: #2c2c2c"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="top-footer">
+    <div class="container">
+      <div class="footer-menu">
+        <div class="row">
+          <div class="col-sm-9">
+            <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <h4 class="heading4">SHOP PRODUCTS</h4>
+            <ul>
+              <li><a routerLink="/Wellness">Wellness Care</a></li>
+              <li><a routerLink="/Kritalia & Co">Kritalia & Co</a></li>
+             
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <h4 class="heading4">About</h4>
+            <ul>
+              
+              <li><a routerLink="/our-company"> our company</a></li>
+              <li><a routerLink="/vision-mission">Vision & Mission</a></li>
+                  <li><a routerLink="/Background-History">Background & History</a></li>
+              <li><a routerLink="/products-advisory-board-member">Products Advisory Board</a></li>
+              <li><a routerLink="/group-executive-chairman">Group Executive Chairman - Group CEO</a></li>
+              <li><a routerLink="/group-executive-vice-chairman">Group Executive Vice Chairman - Group Vice President</a></li>
+              <li><a routerLink="/group-business-development-officer">Group Business Development Officer</a></li>
+              <li><a routerLink="/chief-strategy-officer">Chief Strategy Officer</a></li>
+              <li><a routerLink="/group-chief-operating-officer">Group Chief Operating Officer</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <h4 class="heading4">Quick Links</h4>
+            <ul>
+              <li><a routerLink="/events">Events</a></li>
+              <li><a routerLink="/news">News</a></li>
+              <li><a routerLink="/awards">Awards</a></li>
+              <li><a routerLink="/faqs">FAQs</a></li>
+              <li><a routerLink="/contact">Contact</a></li>
+              <li><a routerLink="/testimonials">Testimonials</a></li>
+              <li><a routerLink="/legal">Legal</a></li>
+              <li><a routerLink="/dvtv">D'Video TV</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+            <h4 class="heading4">HELP CENTER</h4>
+            <ul>
+              <li><a routerLink="/shipping-delivery">Shipping & Delivery</a></li>
+              <li><a routerLink="/orders-return">Orders & Returns</a></li>
+              <li><a routerLink="/Order Cancellation">Order Cancellation</a></li>
+            </ul>
+          </div>
+          </div>
+          </div>
+           <div class="col-lg-3 col-md-3 col-sm-12 t-center">
+              <h4 class="heading4">CONNECT TO D1 GLOBAL</h4>
+              <div class="social-icons">
+                <ul>
+                  <li *ngFor="let social of socialLinks">
+                    <a [href]="social.url" class="hvr-grow" target="_blank" rel="noopener">
+                      <i [class]="social.iconClass"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+  
+        <!-- <div class="social-icons">
+          <ul>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+  <footer>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <p style="font-size:14px;">Copyright © 2023 Destina 1 International</p>
+    </div>
+
+    <div class="col-lg-12">
+      <ul>
+        <li><a routerLink="/Privacy-Policy">Privacy Policy</a></li>
+        <li><a routerLink="/Disclaimer">Disclaimer</a></li>
+        <li><a routerLink="/Code-of-Ethics">Code of Ethics</a></li>
+        <li><a routerLink="/Terms-of-Use">Terms of Use</a></li>
+        <li><a routerLink="/Income-Earnings">Income & Earnings</a></li>
+        <li><a routerLink="/Social-Media-Policy">Social Media Policy</a></li>
+        <li><a routerLink="/Distributorship-Rules-Regulations">Distributorship Rules And Regulations</a></li>
+        <li><a routerLink="/Shipping-Policy">Shipping Policy</a></li>
+        <li><a routerLink="/Return-Policy">Return Policy</a></li>
+        <li><a routerLink="/Cancellation-Policy">Cancellation Policy</a></li>
+        <li style="padding-right: 0;"><a routerLink="/Sitemap">Sitemap</a></li>
+      </ul>
+    </div>
+
+    <!-- Malaysia Address -->
+    <div class="col-sm-6" *ngIf="countryCode !== 'US'">
+      <p style="font-size:14px; font-weight: 500;">Suite: F-3-3 & F-3A-3, Setiawalk,</p>
+      <p style="font-size:14px; font-weight: 500;">Persiaran Wawasan, Pusat Bandar Puchong,</p>
+      <p style="font-size:14px; font-weight: 500;">47160 Puchong, Selangor Darul Ehsan, Malaysia</p>
+      <p style="font-size:14px; font-weight: 500;">Customer Careline Number: +(603) - 5888-7789, +(603) - 8600-4650</p>
+      <p style="font-size:14px; font-weight: 500;">WhatsApp Support: +601110261789</p>
+<p style="font-size:14px; font-weight: 500;">
+  Support Email: <a href="mailto:support@destina1global.com" style="color: #55565A;">{{supportEmail}}</a>
+</p>
+      <p style="font-size:14px; font-weight: 500;">Monday - Friday: 9:00 AM - 07:00 PM</p>
+      <p style="font-size:14px; font-weight: 500;">Sunday: Closed</p>
+    </div>
+
+    <!-- US Address -->
+    <div class="col-sm-6" *ngIf="countryCode === 'US'">
+      <p style="font-size:14px; font-weight: 500;">2041 Sunset View Place,</p>
+      <p style="font-size:14px; font-weight: 500;">San Jose, CA. 95116 USA</p>
+      <p style="font-size:14px; font-weight: 500;">Customer Careline Number: +1 408 422 1663, +1 908 416 2254</p>
+      <p style="font-size:14px; font-weight: 500;">WhatsApp Support: +1 908 416 2254, +1 908 416 2253</p>
+<p style="font-size:14px; font-weight: 500;">
+  Support Email: <a href="mailto:support@destina1global.com">supportdestina1global.com</a>
+</p>
+      <p style="font-size:14px; font-weight: 500;">Monday - Friday: 9:00 AM - 7:00 PM (Pacific Standard Time)</p>
+      <p style="font-size:14px; font-weight: 500;">Sunday: Closed</p>
+    </div>
+    
+
+
+    <div class="col-sm-6" style="display: flex; flex-direction: column; align-items: flex-end;">
+      <p class="fp" style="font-size: 14px; margin-bottom: 6px; font-weight: 500;">A Proud Member Of</p>
+  <div style="display: flex; flex-direction: row; gap: 10px;">
+    <img src="https://destina1.com/images/sectigo_trust_seal_lg_140x54.png" style=" width: 133px;
+    margin: 0px 21px 0px 0px;" alt="Sectigo Logo">
+    <img src="https://destina1.com/images/mdda-logo.jpg" style=" width: 133px;
+    margin: 0px -4px 0px 0px;" alt="MDDA Logo">
+  </div>
+</div>
+    
+
+  </div>
+  </div>
+</footer>

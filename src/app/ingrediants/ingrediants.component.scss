@@ -1,0 +1,322 @@
+/* Banner */
+.f-banner {
+  position: relative;
+  .banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .f-banner-content {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(0,0,0,0.6);
+    .container-fluid {
+      .row {
+        span {
+          font-size: 1rem;
+          text-transform: uppercase;
+        }
+        h4 {
+          font-size: 2rem;
+          margin: 0.5rem 0;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+.ingredient-tabs {
+  .tab-group-switcher {
+    gap: 1rem;
+    .tab-switch {
+      border: 1px solid #002f5f;
+      background-color: transparent;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-weight: 600;
+      color: #002f5f;
+      transition: 0.3s;
+    }
+
+    .tab-switch.active {
+      background-color: #002f5f;
+      color: #fff;
+    }
+  }
+
+  .subcategory-tabs {
+    gap: 10px;
+    .sub-tab {
+      border: 1px solid #002f5f;
+      background-color: transparent;
+      border-radius: 30px;
+      padding: 8px 16px;
+      font-size: 14px;
+      transition: all 0.3s;
+      color: #002f5f;
+      white-space: nowrap;
+    }
+
+    .sub-tab.active {
+      background-color: #002f5f;
+      color: #fff;
+    }
+  }
+
+  .alphabet-filter {
+    background-color: #f3f2f8;
+    padding: 10px 20px;
+    border-radius: 30px;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    .alpha-btn {
+      border: none;
+      background-color: transparent;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #333;
+      transition: 0.2s;
+    }
+
+    .alpha-btn.active {
+      color: #002f5f;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    /* Main Tab Buttons */
+.tab-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.tab-switcher button {
+  padding: 10px 25px;
+  border: 2px solid #002F5F;
+  border-radius: 30px;
+  background-color: white;
+  color: #002F5F;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-switcher button.active {
+  background-color: #002F5F;
+  color: white;
+}
+
+/* Sub Tabs */
+.sub-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.sub-tabs button {
+  padding: 8px 20px;
+  border: 1px solid #002F5F;
+  border-radius: 25px;
+  background-color: white;
+  color: #002F5F;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.sub-tabs button.active {
+  background-color: #002F5F;
+  color: white;
+}
+
+/* Alphabet Filter */
+.alphabet-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  background-color: #f3f1f8;
+  border-radius: 30px;
+  padding: 15px 25px;
+  margin-bottom: 30px;
+}
+
+.alphabet-filter button {
+  background: transparent;
+  border: none;
+  font-weight: 500;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.alphabet-filter button.active {
+  font-weight: bold;
+  color: #002F5F;
+  text-decoration: underline;
+}
+
+  }
+}
+.vitamins-section {
+  margin-top: 40px;
+
+  .section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #002f5f;
+    margin-bottom: 25px;
+  }
+
+  .vitamin-card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 25rem;
+  }
+
+  .vitamin-card {
+    background-color: #f3f3fb;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .vitamin-img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .vitamin-content {
+      padding: 20px;
+      flex-grow: 1;
+      position: relative;
+
+      h5 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #002f5f;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #333;
+        margin-bottom: 50px;
+      }
+
+      .plus-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}
+.vitamin-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.vitamin-card {
+  width: calc(25% - 18px);
+  background: #f7f8fc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.vitamin-card:hover {
+  transform: translateY(-5px);
+}
+
+.vitamin-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.vitamin-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f0f0f8;
+}
+
+.vitamin-body h5 {
+  font-size: 1.1rem;
+  color: #002f5f;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vitamin-body p {
+  font-size: 0.95rem;
+  color: #333;
+  flex: 1;
+}
+
+.plus-icon {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.plus-icon {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border-radius: 50%;
+    padding: 4px;
+    transition: transform 0.2s;
+  }
+
+  svg:hover {
+    transform: scale(1.1);
+  }
+}
+.tab-wrap .card-block {
+    padding: 20px 15px;
+    background: #f0f0f8;
+    min-height: 285px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+

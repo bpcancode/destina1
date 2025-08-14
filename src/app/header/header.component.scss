@@ -1,0 +1,446 @@
+:host {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .main-header,
+  .top-bar,
+  .nav-bar {
+    width: 100%;
+  }
+  
+  /* To make space for the fixed header */
+  body, app-root {
+    padding-top: 140px; /* Adjust based on actual header height */
+  }
+  
+
+.top-bar {
+    background-color:#02274B;
+    color: white;
+    padding:10px 46px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+  
+  .main-header {
+    background-color: #033366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 41px;
+    flex-wrap: wrap;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo img {
+    height: 76px;
+    width: 200px !important;
+  }
+  
+  .logo-text h2 {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .logo-text p {
+    margin: 0;
+    font-size: 12px;
+  }
+  
+  .search-box {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 20px;
+    max-width: 500px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding: 9px 40px 9px 10px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .search-box i {
+    position: absolute;
+    right: 14px;
+    top: 15px;
+    color: gray;
+  }
+  
+  .auth-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+  }
+  
+  .auth-links i {
+    margin-right: 5px;
+  }
+  
+  .nav-bar {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 40px;
+    gap: 15px;
+  }
+  .mega-menu.brand-menu.logos {
+  position: absolute;
+  background: #fff;
+  padding: 0px;
+  border: 1px solid #ccc;
+  display: flex;
+  gap: 2px;
+  z-index: 1000;
+  margin-left: -20rem;
+}
+.brand-menu img {
+  max-height: 200px;     /* Adjust height as needed */
+  max-width: 228px;     /* Optional: cap the width too */
+  object-fit: contain;  /* Keeps the image from stretching */
+  margin-left: 5rem;
+}
+
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+  
+  .nav-bar a {
+    color: #002b5c;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-size: 15px;
+    margin: 0px 5px;
+  }
+  
+  .nav-bar a:hover {
+    text-decoration: underline;
+  }
+
+  //comment
+//   .nav-bar {
+//   display: flex;
+//   gap: 15px;
+//   position: relative;
+// }
+
+// .dropdown {
+//   position: relative;
+// }
+
+// .dropdown-toggle {
+//   cursor: pointer;
+// }
+
+// .dropdown-menu {
+//   display: none;
+//   position: absolute;
+//   top: 100%;
+//   background: white;
+//   border: 1px solid #ccc;
+//   z-index: 1000;
+//   min-width: 150px;
+//   padding: 10px 0;
+// }
+
+// .dropdown:hover .dropdown-menu {
+//   display: block;
+// }
+
+// .dropdown-menu a {
+//   display: block;
+//   padding: 8px 20px;
+//   color: #333;
+//   text-decoration: none;
+// }
+
+// .dropdown-menu a:hover {
+//   background: #f0f0f0;
+// }
+// .inc{
+//   background-color: red;
+// }
+//   .mega-nav {
+//   background: #fff;
+//   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+//   padding: 0 20px;
+// }
+
+// .nav-list {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 25px;
+//   list-style: none;
+//   margin: 0;
+//   padding: 10px 0;
+// }
+
+// .nav-link {
+//   font-weight: 600;
+//   color: #002b5c;
+//   cursor: pointer;
+//   text-decoration: none;
+//   position: relative;
+// }
+
+// .nav-item {
+//   position: relative;
+// }
+
+// .dropdown:hover .mega-menu {
+//   display: flex;
+// }
+
+// .mega-menu {
+//   display: none;
+//   position: absolute;
+//   top: 100%;
+//   left: 0;
+//   padding: 20px;
+//   background: #f9f9f9;
+//   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+//   z-index: 999;
+// }
+
+// .shop-menu {
+//   display: flex;
+//   gap: 60px;
+//   min-width: 600px;
+// }
+
+// .about-menu {
+//   flex-direction: column;
+//   min-width: 300px;
+// }
+
+// .brand-menu {
+//   display: flex;
+//   justify-content: space-between;
+//   gap: 30px;
+//   padding: 30px;
+//   background: #f9f9f9;
+//   min-width: 800px;
+// }
+
+// .brand-menu img {
+//   max-height: 100px;
+//   object-fit: contain;
+// }
+
+// .menu-column {
+//   display: flex;
+//   flex-direction: column;
+//   min-width: 200px;
+// }
+
+// .menu-column h4 {
+//   color: #666;
+//   font-size: 16px;
+//   margin-bottom: 10px;
+//   font-weight: bold;
+// }
+
+// .mega-menu a {
+//   padding: 5px 0;
+//   color: #333;
+//   text-decoration: none;
+//   font-weight: 500;
+// }
+
+// .mega-menu a:hover {
+//   color: #0077b6;
+// }
+
+// .nav-link i {
+//   margin-left: 5px;
+// }
+
+//shope styles
+/* Navbar styling */
+.nav-bar {
+  background-color: #fff;
+  padding: 9px 35px;
+  border-bottom: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+}
+
+/* All nav items */
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #003d66;
+  font-weight: 600;
+  padding: 10px 0;
+  position: relative;
+}
+
+/* Hover underline */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: #003d66;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  gap: 40px;
+  z-index: 1000;
+  width: 600px;
+}
+
+.column {
+  flex: 1;
+}
+
+.column h4 {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.column a {
+  display: block;
+  margin: 5px 0;
+  color: #003d66;
+  text-decoration: none;
+}
+
+//cart on header
+
+//Help styles
+// .helpdropdown {
+//   cursor: pointer;
+//   position: relative;
+// }
+
+// .dropdown-helpcontent {
+//   position: absolute;
+//   background: white;
+//   border: 1px solid #ddd;
+//   padding: 10px;
+//   z-index: 1000;
+// }
+// .dropdown-helpcontent {
+//   position: absolute;
+//   background-color: #fff;
+//   color: #000;
+//   margin-top: 10px;
+//   padding: 10px;
+//   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+//   z-index: 1000;
+//   border-radius: 4px;
+//   min-width: 200px;
+//   display: flex;
+//   flex-direction: column; /* <-- Ensures vertical stacking */
+//   gap: 10px; /* spacing between links */
+// }
+
+// .dropdown-helpcontent a {
+//   display: block;
+//   padding: 5px 0;
+//   color: #333;
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+
+// .dropdown-helpcontent a:hover {
+//   color: #007bff;
+// }
+
+.dropdown-helpcontent {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  padding: 15px;
+  min-width: 200px;
+  color: red;
+}
+
+.nav-helplink {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.helpcontent {
+  display: block;
+  padding: 5px 10px;
+  // color: #000;
+  text-decoration: none;
+    color: #55565A;
+    line-height: 36px;
+    margin-left: 0;
+}
+// .helpcontent
+// {
+//   color: #000048;
+// }
+.help-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-list li {
+  margin-bottom: 8px;
+}
+
+.help-list a {
+  color: #55565A;
+  text-decoration: none;
+  display: block;
+}
+.help-list a:hover{
+  color: #fff;
+  background-color: #033366;
+  text-decoration: none;
+  display: block;
+}
+

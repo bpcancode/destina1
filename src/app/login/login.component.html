@@ -1,0 +1,29 @@
+<div class="main-wrapper">
+    <div class="login outer">
+      <div class="outer-content">
+        <a class="navbar-brand " routerLink="/" style="margin-top: 0;">
+          <img src="assets/images/destina1-logo.png" style="width: 100px;    margin-left: 9rem;">
+        </a>
+  
+        <div class="inside-div">
+          <h2 class="heading1">Login</h2>
+  
+          <p>Enter Id</p>
+          <input type="text" placeholder="Email Address or Phone Number" [(ngModel)]="userId" />
+  
+          <p>Password</p>
+          <div class="inline">
+            <input [type]="showPassword ? 'text' : 'password'" placeholder="Password" [(ngModel)]="password" />
+            <i class="far" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'" (click)="togglePassword()"></i>
+          </div>
+  
+          <br />
+          <button class="pswd" (click)="login()">Login</button>
+          <a routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+      </div>
+  
+      <p class="pointer" role="button" [routerLink]="['/','Register']" style="font-weight: 400; text-align: center;">Don't have an account? Sign Up
+      </p>
+    </div>
+  </div>

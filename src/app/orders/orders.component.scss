@@ -1,0 +1,44 @@
+ .banner:after{
+        display: none;
+    }
+    .heading1 {
+    font-size: 32px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+   }
+    .topic-content li {
+              font-size: 16px;
+              margin-bottom: 5px;
+            }
+            #list-style li {
+              list-style: decimal;
+            }
+            .topic-content{ border:none; }
+            .topic-content h3 {margin-bottom: 10px;}
+            .topic-content li { margin-bottom: 10px; }
+            .topic-content p{ line-height: 25px; }
+    .img-n{display: none;}
+    @media screen and (max-width:767px) {
+        .img-b{
+         display: none;
+        }
+        .img-n{
+            display: block;
+        }
+        }
+    
+    @media screen and (max-width: 575px) {
+            .heading1{
+            font-size: 24px;
+            }
+            .board-members h3{
+            font-size: 24px;
+
+            }
+            p{
+                font-size: 14px;
+            }
+            li{
+                font-size: 14px;
+            }
+        }

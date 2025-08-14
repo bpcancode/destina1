@@ -1,0 +1,39 @@
+ .board-members p{
+        text-align: justify;
+    }
+    .heading1 {
+    font-size: 32px;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    }
+    .bg-box {
+    margin-top: 50px;
+    margin-left: 15px;
+    }
+    @media screen  and ( max-width:767px) {
+        .bg-box{
+            width: 100%;
+        }
+        .bg-box h2{
+            text-align: center;
+        }
+        .board-members {
+            margin: 20px 0;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        .skewed{
+            transform: skewX(10deg) !important;
+        }
+        .heading1{
+            font-size: 24px;
+        }
+        p{
+            font-size: 15px;
+        }
+        .board-members #space {
+            font-size: 24px;
+        }
+
+    }

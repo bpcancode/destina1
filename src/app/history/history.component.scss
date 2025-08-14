@@ -1,0 +1,71 @@
+.heading1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 900;
+}
+.heading1 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    font-family: "Noto Sans Thai", sans-serif;
+    /* font-weight: 500; */
+    color: #002f5f;
+}
+.history {
+    padding: 80px 20px 50px;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.history .inner-box {
+    background: #f1f2ff;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+    text-align: center;
+    padding: 20px 15px;
+    min-height: 265px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+.history h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+.history .inner-box p {
+    line-height: 24px;
+    font-weight: 400;
+    font-size: 16px;
+}
+p {
+    margin: 0;
+}
+
+.package-content {
+    margin: 30px 0;
+}
+main .breadcrumb-item a {
+    font-weight: 400;
+    font-size: 16px;
+    color: #002f5f;
+}
+a {
+    text-decoration: none;
+    color: #2c2c2c;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+main {
+    margin-top: 90px;
+}

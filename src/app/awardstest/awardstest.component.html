@@ -1,0 +1,127 @@
+<main class="container">
+  <div class="row">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+        <li class="breadcrumb-item active">Awards</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="package-content">
+    <h2 class="heading1">Awards</h2>
+  </div>
+
+  <div class="banner">
+    <div class="row">
+      <img src="assets/images/pexels-photo-733857.jpeg" />
+      <div class="banner-content">
+        <h2>REWARDING EXPERIENCES</h2>
+        <h6>Experience unforgettable Awards...</h6>
+        <a href="#">Get Started <i class="fas fa-angle-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <section class="awards-sec">
+    <div class="container">
+      <h2 class="heading1">Awards</h2>
+      <p>Recognize our business achievements.</p>
+      <owl-carousel-o [options]="carouselOptions">
+        <ng-container *ngFor="let award of awards1">
+          <ng-template carouselSlide>
+            <div class="item">
+              <img [src]="'assets/images/' + award.image" alt="{{ award.title }}" />
+              <h3 class="heading2">{{ award.title }}</h3>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+  </section>
+  
+  <!-- Banner Section -->
+<div class="banner">
+  <div class="container">
+    <div class="row">
+      <img src="assets/images/barani-sir2.png" alt="Prof. Barani Karunakaran" />
+      <div
+        class="banner-content"
+        style="left: 0; text-align: left; padding-left: 60px; width: 100%; top: 100px;"
+      >
+        <h2 style="font-size: 24px; line-height: 30px;">
+          <i class="fa-solid fa-quote-left" style="padding-right: 15px; position: relative; top: -8px;"></i>
+          Everybody here earned their way with hard work, determination, and focus on the fundamentals.
+          <i class="fa-solid fa-quote-right" style="padding-left: 15px; position: relative; top: -8px;"></i>
+        </h2>
+        <h6 style="font-weight: 300;">
+          - PROF. DATO' SRI DR. BARANI KARUNAKARAN -<br />
+          Founder Group Executive Chairman &amp; Group CEO
+        </h6>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Paragraph Note Section -->
+<div class="paragraph-note">
+  <div class="container">
+    <div class="row">
+      <p>
+        IBOs must be in compliance at all times with the Destina1 IBO Compensation Plan, Quality Assurance Standards
+        and the IBO Rules of Conduct to keep their invitation to Amway incentive trips.
+      </p>
+      <ul>
+        <li>
+          For the calendar year 2021, the average income from Destina1 for all U.S. registered IBOs at the Founders
+          Platinum level and below was $766 before expenses.
+        </li>
+        <li>
+          See <a href="https://destina1.com/income-disclosure" target="_blank">destina1.com/income-disclosure</a> for details.
+          Earnings depend on many factors, including: customer base, business experience, effort, dedication, and
+          quality and performance of an IBO’s sales team.
+        </li>
+        <li>
+          Following are the approximate percentages of U.S. registered IBOs who achieved the illustrated results in the
+          calendar year 2021: New Platinum Conference 0.0642%; Achievers Invitational 0.5107%; Diamond Club 0.0271%;
+          Diamond Select 0.0123%; NAGC 0.0086%
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+  <section class="contact-blks">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 no-gap">
+          <i class="far fa-comment-dots"></i>
+          <h3 class="heading2">Contact Us</h3>
+          <p>Our support team is here to help by phone or email.</p>
+          <a routerLink="/contact" class="heading3">
+            Learn More <i class="fas fa-angle-right" style="font-size: 14px; color: #2c2c2c"></i>
+          </a>
+        </div>
+  
+        <div class="col-sm-4 no-gap">
+          <i class="far fa-handshake"></i>
+          <h3 class="heading2">D1PROMISE</h3>
+          <p>Satisfaction will always be our goal, and protection—our promise.</p>
+          <a href="#" class="heading3">
+            Learn More <i class="fas fa-angle-right" style="font-size: 14px; color: #2c2c2c"></i>
+          </a>
+        </div>
+  
+        <div class="col-sm-4 no-gap">
+          <i class="fas fa-rocket"></i>
+          <h3 class="heading2">Start a Business</h3>
+          <p>Sell quality products that people use every day.</p>
+          <a routerLink="/start-a-business" class="heading3">
+            Learn More <i class="fas fa-angle-right" style="font-size: 14px; color: #2c2c2c"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

@@ -1,0 +1,13 @@
+.carousel-indicators-custom .indicator-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #ccc;
+  margin: 0 6px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators-custom .indicator-bar.active {
+  background-color: #002f5f;
+}

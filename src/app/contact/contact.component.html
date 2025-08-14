@@ -1,0 +1,66 @@
+<main class="container">
+    <div class="row">
+      <nav aria-label="breadcrumb" class="col-12">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+    </div>
+  
+    <div class="package-content">
+      <h2 class="heading1">Contact Us</h2>
+      <div class="content-main-block">
+        <div class="row">
+  
+          <!-- Left Column -->
+          <div class="col-lg-6">
+            <div class="contact-details">
+              <h3 class="heading3">Destina1 International World HQ</h3>
+              <p>(989308-X) (AJL 932060)</p>
+  
+              <div class="row" *ngFor="let item of hqContacts">
+                <div class="col-1"><i class="{{ item.icon }}"></i></div>
+                <div class="col-10">
+                  <h4 class="heading4">{{ item.title }}</h4>
+                  <p>{{ item.detail }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <!-- Right Column -->
+          <div class="col-lg-6">
+            <div class="contact-details">
+              <h3 class="heading3">D1 Global International - Support Centre</h3>
+  
+              <div class="row" *ngFor="let item of supportContacts">
+                <div class="col-1"><i class="{{ item.icon }}"></i></div>
+                <div class="col-10">
+                  <h4 class="heading4">{{ item.title }}</h4>
+                  <p>{{ item.detail }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <section class="contact-blks">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-4 no-gap" *ngFor="let box of contactBoxes">
+          <i class="{{ box.icon }}"></i>
+          <h3 class="heading2">{{ box.title }}</h3>
+          <p>{{ box.description }}</p>
+          <a href="#" class="heading3">
+            Learn More <i class="fas fa-angle-right" style="font-size: 14px; color: #2c2c2c"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  

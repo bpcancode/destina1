@@ -1,0 +1,829 @@
+<!-- <router-outlet></router-outlet> -->
+
+<div style="margin-top: 7rem;">
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let slide of slides">
+      <div class="row align-items-center">
+        <div class="col-md-12">
+          <img [src]="slide.image" class="d-block w-100" alt="Slide Image">
+        </div>
+
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<!-- recommended-products.component.html -->
+<section class="recom-products box-shadow">
+  <div class="container">
+    <div class="row">
+       <h1 class="heading1 text-center">BEST SELLERS</h1>
+      <h2 class="heading1 text-center">Wellness Care</h2>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of productsdata">
+        <div class="prod">
+          <a href="#">
+            <div class="top-image">
+              <img [src]="product.pkgimage" [alt]="product.pkname">
+              <h4 class="heading3">{{ product.pkname }}</h4>
+            </div>
+            <div class="mid-content">
+              <div class="ratings">
+                <p style="color: #56575a !important;">Product Code : {{ product.pkcode }}</p>
+              </div>
+              <div class="cost">
+                <h6 class="heading4">{{ product.mrp }}</h6>
+              </div>
+            </div>
+            <p style="color: #56575a !important;" class="ddc-price">
+              DDC/DD Price: {{ product.currency || 'INR' }} {{ product.ddcPrice }}
+            </p>
+
+            <!-- Stock Status -->
+            <p style="color: green !important;" class="stock-status " [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
+              ✔ {{ product.inStock ? 'Out of Stock' : 'In Stock' }}
+            </p>
+
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+              <button (click)="decreaseQty(product)" class="w-25 p-1 decrement-increment">-</button>
+              <input type="text" [value]="1" readonly class="w-25 p-1 quantity-text ">
+              <button (click)="increaseQty(product)" class="w-25 p-1 decrement-increment">+</button>
+              <button (click)="addToCart(product.pkcode)" class="p-2 ms-2 cart" >🛒</button>
+            </div>
+
+            <!-- Add to Cart -->
+
+
+            <div class="btn-content">
+               <a [routerLink]="['/productcatdetails', product.pkcode]">View Details</a> 
+              
+               <!-- <a href="/productcatdetails">view details</a>  -->
+            </div>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Products -->
+<!-- <section class="recom-products" style="padding: 100px 0;">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+        <div class="just-prod text-center">
+          <a href="#">
+            <img [src]="product.image" class="img-fluid" alt="{{ product.title }}">
+          </a>
+          <a href="#" class="heading3">
+            {{ product.title }} <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section class="double-box">
+  <div class="container">
+     <div class="row text-center">
+      <h2 class="heading1 text-center">Quality Products. Guaranteed.</h2>
+      <p style="margin: -10px auto 40px;">Discover products inspired by and created for a healthier, more confident
+        life.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 no-pad">
+        <div class="img-box">
+          <img src="assets/images/etyx0Z.jpg" alt="Wellness Support" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-md-6 no-pad" style="padding: 60px;">
+        <div class="bg-box">
+          <p>Supporting your wellness journey.</p>
+          <h2 class="heading1">Follow nature’s lead to nourish every need.</h2>
+          <p>
+            Learn more about how to support your top needs with plant-forward Nutrilite™ products!
+            Focus on overall wellness and fill nutritional gaps in every stage of life.
+          </p>
+          <a href="#">Learn More <i class="fas fa-angle-right" style="padding-left: 7px;"></i></a>
+
+          <!-- <a [routerLink]="'/learn-more'">Learn More <i class="fas fa-angle-right" style="padding-left: 7px;"></i></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Premier picks -->
+ <!-- <section class="recom-products py-4">
+  <div class="container">
+    <h2 class="text-center mb-4">Premier Picks</h2>
+
+    <ngb-carousel #pickCarousel="ngbCarousel"
+                  [showNavigationArrows]="false"
+                  [showNavigationIndicators]="false"
+                  [interval]="0"
+                  (slide)="onSlide($event)">
+
+      <ng-template ngbSlide *ngFor="let group of groupedPicks; let i = index" [id]="'slide-' + i">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of group">
+            <div class="card mb-3">
+              <a [href]="item.link" target="_blank">
+                <img [src]="item.image" class="card-img-top" [alt]="item.title" />
+              </a>
+              <div class="card-body">
+                <h6 class="card-title">{{ item.title }}</h6>
+                <p class="card-text">{{ item.text }}</p>
+                <a [href]="item.link" target="_blank" class="btn btn-primary btn-sm">
+                  View More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <div class="d-flex justify-content-center mt-3">
+      <div *ngFor="let g of groupedPicks; let i = index"
+           class="indicator-bar mx-1"
+           [class.active]="i === currentSlide"
+           (click)="pickCarousel.select('slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- <section class="recom-products" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">PremierPicks</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let promo of PremierPicks">
+        <div class="just-prod">
+          <a href="#">
+            <img [src]="promo.image" alt="Promotion Image" class="img-fluid">
+          </a>
+        </div>
+      </div>
+      <a href="#" class="heading3" style="margin:20px auto 0;">
+        View More <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+      </a>
+    </div>
+  </div>
+</section> -->
+<section class="recom-products py-5">
+  <div class="container">
+    <h2 class="heading1 text-center mb-4">Premier Picks</h2>
+
+    <ngb-carousel #carouselRef="ngbCarousel"
+                  [showNavigationArrows]="false"
+                  [showNavigationIndicators]="false"
+                  [interval]="0"
+                  (slide)="onPremierSlide($event)">
+
+      <ng-template ngbSlide *ngFor="let group of groupedPremierPicks; let slideIndex = index" [id]="'premier-slide-' + slideIndex">
+        <div class="row">
+          <div class="col-md-4 col-sm-6" *ngFor="let promo of group">
+            <div class="just-prod mb-4 text-center">
+              <a [href]="promo.link" target="_blank" rel="noopener noreferrer">
+                <img [src]="promo.image" alt="Promotion Image" class="img-fluid rounded shadow-sm">
+              </a>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+    </ngb-carousel>
+
+    <!-- Custom Indicators -->
+    <div class="carousel-indicators-custom d-flex justify-content-center mt-3">
+      <div *ngFor="let group of groupedPremierPicks; let i = index"
+           class="indicator-bar"
+           [class.active]="i === currentPremierSlide"
+           (click)="carouselRef.select('premier-slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- featured products -->
+<section class="recom-products box-shadow">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">Featured Products</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of productsdata">
+        <div class="prod">
+          <a href="#">
+            <div class="top-image">
+              <img [src]="product.pkgimage" [alt]="product.pkname">
+              <h4 class="heading3">{{ product.pkname }}</h4>
+            </div>
+            <div class="mid-content">
+              <div class="ratings">
+                <p style="color: #56575a !important;">Product Code : {{ product.pkcode }}</p>
+              </div>
+              <div class="cost">
+                <h6 class="heading4">{{ product.mrp }}</h6>
+              </div>
+            </div>
+            <p style="color: #56575a !important;" class="ddc-price">
+              DDC/DD Price: {{ product.currency || 'INR' }} {{ product.ddcPrice }}
+            </p>
+
+            <!-- Stock Status -->
+            <p style="color: green !important;" class="stock-status " [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
+              ✔ {{ product.inStock ? 'Out of Stock' : 'In Stock' }}
+            </p>
+
+            <!-- Quantity Controls -->
+             <div class="quantity-controls">
+              <button (click)="decreaseQty(product)" class="w-25 p-1 decrement-increment">-</button>
+              <input type="text" [value]="1" readonly class="w-25 p-1 quantity-text ">
+              <button (click)="increaseQty(product)" class="w-25 p-1 decrement-increment">+</button>
+              <button (click)="addToCart(product.pkcode)" class="p-2 ms-2 cart" >🛒</button>
+            </div>
+
+            <!-- Add to Cart -->
+
+
+            <div class="btn-content">
+              <a [routerLink]="['/productcatdetails', product.pkcode]">View Details</a>
+              <!-- <a href="/productcatdetails">view details</a> -->
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- announcement -->
+
+<!-- <section class="recom-products" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">ANNOUNCEMENT</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let item of announcements">
+        <div class="just-prod">
+          <div>
+            <a [href]="item.link" target="_blank">
+              <img [src]="item.image" alt="{{ item.title }}" style="height: 214px;">
+            </a>
+            <h4 style="font-size: 14px; font-weight: 600; color: #485d8f; margin-top: 15px;">{{ item.title }}</h4>
+            <p style="font-size: 14px; margin-top: 5px; font-weight: 400; opacity: 0.8; color: #666;">
+              {{ item.description }}
+            </p>
+            <button class="btn-black" style="display: inline-block; margin-top: 30px;">View More</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- View All Announcement Button (Only once in the last row) -->
+    <!-- <div class="row">
+      <div class="col-12 text-center">
+       <a href="https://destina1.com/#/announcements" class="heading3" style="margin: 20px auto 0;">
+          View all Destina1 announcements <i class="fas fa-angle-right" style="padding-left: 7px;margin-top: 20px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+ <app-newsdynamic></app-newsdynamic> 
+
+     <!-- news -->
+    <!-- <section class="news-carousel py-5">
+  <div class="container">
+    <h2 class="heading1 text-center mb-4"> NEWS</h2>
+
+    <ngb-carousel *ngIf="newgroupedItems.length > 0"
+                  #newsCarouselRef="ngbCarousel"
+                  [showNavigationArrows]="false"
+                  [showNavigationIndicators]="false"
+                  [interval]="0"
+                  (slide)="onNewsSlide($event)">
+
+      <ng-template ngbSlide *ngFor="let group of newgroupedItems; let i = index" [id]="'news-slide-' + i">
+        <div class="row">
+          <div class="col-md-4 col-sm-6" *ngFor="let item of group">
+            <div class="card text-center mb-4 h-100">
+              <img *ngIf="item.image" [src]="item.image" alt="News Image"
+                   class="card-img-top img-fluid rounded-top" style="height: 180px; object-fit: cover;" />
+              <div class="card-body">
+                <h6 class="text-uppercase fw-bold" style="color: #002f5f;">{{ item.title }}</h6>
+                <p class="text-muted">{{ item.text }}</p>
+                <a href="#" class="btn btn-primary rounded-pill px-4 mt-2">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel> -->
+
+    <!-- Custom Indicators -->
+    <!-- <div class="carousel-indicators-custom d-flex justify-content-center mt-3">
+      <div *ngFor="let group of newgroupedItems; let i = index"
+           class="indicator-bar"
+           [class.active]="i === currentNewsSlide"
+           (click)="newsCarouselRef.select('news-slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+ <!-- <section class="news-carousel py-4">
+  <div class="container">
+    <h2 class="text-center mb-4">NEWS</h2>
+    <ngb-carousel #carouselRef="ngbCarousel"
+              [showNavigationArrows]="false"
+              [showNavigationIndicators]="false"
+              [interval]="0"
+              (slide)="onSlide($event)">
+
+  <ng-template ngbSlide *ngFor="let group of newgroupedItems; let i = index" [id]="'slide-' + i">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of group">
+        <div class="card text-center mb-4 d-flex flex-column justify-content-between" style="border: none;">
+          <img [src]="item?.image" class="card-img-top" alt="News Image" />
+          <div class="card-body d-flex flex-column">
+            <h6 style="color:#002f5f !important;" class="card-title text-uppercase text-primary">{{ item.title }}</h6>
+            <p class="card-text text-muted">{{ item.text }}</p>
+            <div class="mt-auto">
+              <a href="#" class="btn btn-primary rounded-pill px-4">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+</ngb-carousel>
+ -->
+
+    <!-- <ngb-carousel #carouselRef="ngbCarousel"
+                  [showNavigationArrows]="false"
+                  [showNavigationIndicators]="false"
+                  [interval]="0"
+                  (slide)="onSlide($event)">
+
+      <ng-template ngbSlide >
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of newcarouselItems">
+            <div class="card text-center mb-4 d-flex flex-column justify-content-between" style="border: none;">
+            <img [src]="item?.image" class="card-img-top" alt="News Image" />
+              <div class="card-body d-flex flex-column">
+                <h6 style="color:#002f5f !important;" class="card-title text-uppercase text-primary">{{ item.title }}</h6>
+                <p class="card-text text-muted">{{ item.text }}</p>
+                <div class="mt-auto">
+                  <a href="#" class="btn btn-primary rounded-pill px-4">View More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel> -->
+
+    <!-- Indicators under carousel visually aligned to cards -->
+    <!-- <div class="carousel-indicators-custom d-flex justify-content-center mt-2">
+      <div
+        *ngFor="let group of newgroupedItems; let i = index"
+        class="indicator-bar"
+        [class.active]="i === currentSlide"
+        (click)="carouselRef.select('slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- <section class="double-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 no-pad" style="padding: 60px; color: #3E560A;">
+        <div class="bg-box">
+          <h2 class="heading1 text-center">Destina 1 International</h2>
+          <span style="font-weight: 500; font-size: 19px; margin-bottom: 5px; display: block;">
+            leading & innovative Direct Selling company
+          </span>
+          <p>
+            that utilizes cutting edge & sophisticated Direct Selling software system to promote latest products
+            embedded
+            with advanced scalar technology. Its advance scalar energized products which are good for the well being of
+            human body are marketed in many countries worldwide.
+          </p>
+          <a href="#" style="color: #3E560A;">
+            KNOW MORE ABOUT US <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 no-pad">
+        <div class="img-box" style="width: 100%;">
+          <img [src]="'assets/images/20212517032506965029.png'" alt="Destina1 Info" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<!-- announcement -->
+<section class="recom-products" style="padding: 50px 0;">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">ANNOUNCEMENT</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6" *ngFor="let item of announcements">
+        <div class="just-prod">
+          <div>
+            <a [href]="item.link" target="_blank">
+              <img [src]="item.image" alt="{{ item.title }}" style="height: 214px;">
+            </a>
+            <h4 style="font-size: 14px; font-weight: 600; color: #485d8f; margin-top: 15px;">{{ item.title }}</h4>
+            <p style="font-size: 14px; margin-top: 5px; font-weight: 400; opacity: 0.8; color: #666;">
+              {{ item.description }}
+            </p>
+            <button class="btn-black" style="display: inline-block; margin-top: 30px;">View More</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View All Announcement Button (Only once in the last row) -->
+    <div class="row">
+      <div class="col-12 text-center">
+       <a href="https://destina1.com/#/announcements" class="heading3" style="margin: 20px auto 0;">
+          View all Destina1 announcements <i class="fas fa-angle-right" style="padding-left: 7px;margin-top: 20px;"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- <section class="double-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 no-pad" style="padding: 60px; color: #3E560A;">
+        <<div class="bg-box">
+          <h2 class="heading1 text-center">Destina 1 International</h2>
+          <span style="font-weight: 500; font-size: 19px; margin-bottom: 5px; display: block;">
+            leading & innovative Direct Selling company
+          </span>
+          <p>
+            that utilizes cutting edge & sophisticated Direct Selling software system to promote latest products
+            embedded
+            with advanced scalar technology. Its advance scalar energized products which are good for the well being of
+            human body are marketed in many countries worldwide.
+          </p>
+          <a href="#" style="color: #3E560A;">
+            KNOW MORE ABOUT US <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 no-pad">
+        <div class="img-box" style="width: 100%;">
+          <img [src]="'https://destina1.com/images/paying.jpeg'" alt="Destina1 Info" class="img-fluid">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<section class="double-box ms-5">
+  <div class="container">
+    <div class="row mb-4">
+      <!-- First Image Block -->
+      <div class="col-md-5 no-pad me-4">
+        <div class="img-box">
+          <img src="https://destina1.com/images/paying.jpeg" alt="Destina1 Info" class="img-fluid">
+          <div class="overlay">
+            <div class="text">
+              <h3>Destina 1 Product Catalogue</h3>
+              <p>Check out the complete range of Destina 1 products with links to additional digital resources.</p>
+              <!-- View More Link -->
+              <a href="https://destina1.com/#/productcatalogue" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Second Image Block -->
+      <div class="col-md-5 no-pad ms-4">
+        <div class="img-box">
+          <img src="https://destina1.com/images/seeing.jpeg" alt="Destina1 Info" class="img-fluid">
+          <div class="overlay box">
+            <div class="text">
+              <h3>Destina 1 Digital Assets</h3>
+              <p>Connect with Destina 1 digitally! Websites, apps, social pages, and more – find all the digital resources you need in one place.</p>
+              <!-- View More Link -->
+              <a href="https://destina1.com/#/digitalassets" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <!-- Third Image Block -->
+      <div class="col-md-5 no-pad me-4">
+        <div class="img-box">
+          <img src="https://destina1.com/images/open-testimony.jpg" alt="Destina1 Info" class="img-fluid">
+          <div class="overlay">
+            <div class="text">
+              <h3>Destina 1 Product Catalogue</h3>
+              <p>Check out the complete range of Destina 1 products with links to additional digital resources.</p>
+              <!-- View More Link -->
+              <a href="https://destina1.com/#/Testimonials" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fourth Image Block -->
+      <div class="col-md-5 no-pad ms-4">
+        <div class="img-box">
+          <img src="https://destina1.com/images/redcarpet1.png" alt="Destina1 Info" class="img-fluid">
+          <div class="overlay">
+            <div class="text">
+              <h3>Destina 1 Digital Assets</h3>
+              <p>Connect with Destina 1 digitally! Websites, apps, social pages, and more – find all the digital resources you need in one place.</p>
+              <!-- View More Link -->
+              <a href="https://destina1.com/Hall-Of-Fame.html" target="_blank">View More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- <section class="recom-products box-shadow">
+    <div class="container">
+      <div class="row">
+        <h2 class="heading1 text-center">Recommended for You</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let product of productscat">
+          <div class="prod">
+            <a href="#">
+              <div class="top-image">
+                <img [src]="product.imgSrc" [alt]="product.name">
+                <h4 class="heading3">{{ product.name }}</h4>
+              </div>
+              <div class="mid-content">
+                <div class="ratings">
+                  <p>Product Code : {{ product.code }}</p>
+                </div>
+                <div class="cost">
+                  <h6 class="heading4">{{ product.price }}</h6>
+                </div>
+              </div>
+              <div class="btn-content">
+                <a href="/productcatdetails">view details</a>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="single-streaming new-ss pt-5 pb-3">
+    <app-social-media-tabs></app-social-media-tabs>
+  </section>
+
+  <!-- <section class="single-streaming new-ss pt-5 pb-3">
+  <div class="container">
+    <div class="warpper">
+      <h4 class="heading1 text-center mb-4" style="color: #002F5F; font-size: 32px; font-weight: 600;">
+        TRENDING ON SOCIALMEDIA #DESTINA 1
+      </h4>
+
+      <div class="tabs d-flex justify-content-center mb-4">
+        <div class="f-tab" *ngFor="let tab of tabs">
+          <button class="tab btn" (click)="selectedTab = tab.id">
+            <i
+              class="fa-brands"
+              [ngClass]="tab.icon"
+              [ngStyle]="{
+                'background': tab.gradient ? 'linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7)' : tab.color,
+                'color': tab.gradient ? '#fff' : '#fff',
+                'padding': '10px',
+                'border-radius': '50%'
+              }"
+            ></i>
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="selectedTab === 'facebook'">
+        <div id="facebookCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+                <div
+                  class="col-sm-3"
+                  *ngFor="let item of facebookItems"
+                  style="visibility: visible; animation-name: pulse;"
+                >
+                  <div class="image-blk">
+                    <a
+                      [href]="item.link"
+                      target="_blank"
+                      [class.vid]="item.isVideo"
+                      style="display: block"
+                    >
+                      <img [src]="item.img" class="lazyload w-100" />
+                      <i *ngIf="item.isVideo" class="fa-solid fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#facebookCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#facebookCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- FEATURED BRANDS SECTION -->
+<!-- <section class="logo-slider pt-5">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 mx-auto" style="color: #002F5F;text-align: center;">FEATURED BRANDS</h2>
+    </div>
+    <div class="logos-brands mt-3">
+      <div class="logos-slide d-flex flex-wrap justify-content-center align-items-center">
+
+    <img *ngFor="let logo of brandLogos" [src]="logo" alt="brand logo" class="mx-3 mb-3" />
+
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="logo-slider pt-5">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 mx-auto" style="color: #002F5F;text-align: center;">FEATURED BRANDS</h2>
+    </div>
+    <div class="logos-brands mt-5">
+      <div class="logos-slide" #logosSlide>
+        <div class="logos-track p-2" #logosTrack>
+          <img *ngFor="let logo of brandLogos" [src]="logo" alt="brand logo" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOUBLE BOX SECTION -->
+<section class="double-box mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 no-pad" style="padding: 60px; color: #485d8f; background: #f2f9fa;">
+        <div class="bg-box">
+          <h2 class="heading1">Destina 1 International</h2>
+          <span style="font-weight: 500; font-size: 19px; margin-bottom: 5px; display: block;">
+            leading & innovative Direct Selling company
+          </span>
+          <p>
+            that utilizes cutting edge & sophisticated Direct Selling software system to promote latest products embedded with Uniwave by Quantes Technology. Its Uniwave Energy By Quantes Technology products which are good for the well being of human body are marketed in many countries worldwide.
+          </p>
+          <a routerLink="/About" style="color: #485d8f;">
+            KNOW MORE ABOUT US <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 no-pad">
+        <div class="img-box w-100">
+          <img src="https://destina1.com/images/20212517032506965029(new).png" class="lazyload w-100" alt="About Destina">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="recom-products py-5">
+  <div class="container">
+    <h2 class="heading1 text-center mb-4">OUR AWARDS</h2>
+
+    <ngb-carousel #carouselRef="ngbCarousel"
+                  [showNavigationArrows]="false"
+                  [showNavigationIndicators]="false"
+                  [interval]="0"
+                  (slide)="onAwardsSlide($event)">
+
+      <ng-template ngbSlide *ngFor="let group of awardsGrouped; let slideIndex = index" [id]="'awards-slide-' + slideIndex">
+        <div class="row">
+          <div class="col-md-4 col-sm-6" *ngFor="let award of group">
+            <div class="just-prod mb-4 text-center">
+
+                <img [src]="award.img" [alt]="award.title" class="img-fluid rounded shadow-sm mb-3">
+                <h5 class="Information mt-3" [innerHTML]="award.title"></h5>
+
+            </div>
+          </div>
+        </div>
+      </ng-template>
+
+    </ngb-carousel>
+
+    <!-- Custom Indicators -->
+    <div class="carousel-indicators-custom d-flex justify-content-center mt-3">
+      <div *ngFor="let group of awardsGrouped; let i = index"
+           class="indicator-bar"
+           [class.active]="i === currentawardsSlide"
+           (click)="carouselRef.select('awards-slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="recom-products py-5">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">WHAT PEOPLE HAVE TO SAY ABOUT US</h2>
+    </div>
+
+      <div class="col-12 text-center mt-2">
+        <a href="https://destina1.com/#/testimonials" class="btn">
+          Know More
+        </a>
+      </div>
+
+    <!-- Testimonial Carousel -->
+    <ngb-carousel
+      #carouselRef="ngbCarousel"
+      [showNavigationArrows]="false"
+      [showNavigationIndicators]="false"
+      [interval]="0"
+      (slide)="onSlide($event)">
+
+      <ng-template ngbSlide *ngFor="let group of groupSlideArray; let slideIndex = index" [id]="'slide-' + slideIndex">
+        <div class="row">
+          <div class="col-md-6 col-sm-6" *ngFor="let testimonial of group">
+            <div class="just-prod mb-4 text-center">
+              <img [src]="testimonial.image" class="card-img-top" alt="Testimonial image">
+              <div class="card-body">
+                <blockquote class="card-text">"{{ testimonial.text }}"</blockquote>
+                <p class="testimonial-author">- {{ testimonial.author }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+
+    <!-- Custom Indicators -->
+    <div class="carousel-indicators-custom d-flex justify-content-center mt-3">
+      <div *ngFor="let group of groupSlideArray; let i = index"
+           class="indicator-bar"
+           [class.active]="i === currentGroupSlide"
+           (click)="carouselRef.select('slide-' + i)">
+      </div>
+    </div>
+  </div>
+</section>

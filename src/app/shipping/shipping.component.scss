@@ -1,0 +1,47 @@
+.banner::after {
+  display: none;
+}
+
+.heading1 {
+  font-size: 32px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+}
+
+.topic-content {
+  border: none;
+
+  ul li {
+    color: grey;
+  }
+
+  p.dashed {
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+  }
+}
+
+.img-n {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .img-b {
+    display: none;
+  }
+
+  .img-n {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .heading1 {
+    font-size: 24px;
+  }
+
+  p,
+  li {
+    font-size: 14px;
+  }
+}

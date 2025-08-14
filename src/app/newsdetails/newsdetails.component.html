@@ -1,0 +1,18 @@
+<main class="container mt-10">
+<nav aria-label="breadcrumb" class="mb-3" style="margin-top: 100px;">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
+      <li class="breadcrumb-item" aria-current="page">News</li>
+      <li class="breadcrumb-item active" aria-current="page">{{slugId()}}</li>
+    </ol>
+  </nav>
+
+  <img [src]="imagePath()" class="rounded mx-auto d-block">
+
+  <!-- {{slugId()}} -->
+
+  <h1 class="text-center">{{news().title}}</h1>
+
+  <div class="text-center" [innerHTML]="news().descr"></div>
+
+</main>

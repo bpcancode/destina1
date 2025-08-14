@@ -1,0 +1,134 @@
+<main class="container">
+  <div class="row" style="margin-top: 100px">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/products">Package</a></li>
+        <li class="breadcrumb-item">
+          <a routerLink="/products">Sapphire Package</a>
+        </li>
+        <!-- <li class="breadcrumb-item active" aria-current="page">{{ proddetails.pkcode }} ({{ proddetails.pkname }})</li> -->
+      </ol>
+    </nav>
+  </div>
+  <section class="package-tabs single-product">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="zoomed-images">
+            <div class="thumbnails" *ngIf="images.length > 0">
+              <ul>
+                <li *ngFor="let img of images">
+                  <img
+                    [src]="img"
+                    (click)="selectImage(img)"
+                    [class.selected]="img === selectedImage"
+                    class="small_img"
+                  />
+                </li>
+              </ul>
+            </div>
+
+            <div class="zoom-container" *ngIf="selectedImage">
+              <img
+                [src]="selectedImage"
+                class="zoomable-img"
+                style="width: 400px"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12" *ngIf="proddetails">
+          <div class="top-content">
+            <h2 class="heading1">
+              {{ proddetails.CodeNo }} ({{ proddetails.pkname }})
+            </h2>
+            <h4>Product Code : {{ proddetails.pkcode }}</h4>
+            <h4>CV : {{ proddetails.CV }}</h4>
+            <h4>
+              <span
+                >Availability:
+                <span id="green">{{ proddetails.aqty }}</span></span
+              >
+            </h4>
+            <div class="rating">
+              <i class="fas fa-star" *ngFor="let s of [1, 2, 3, 4, 5]"></i>
+              <!-- You can skip rating count if not present -->
+            </div>
+            <h3 class="heading2">RM {{ proddetails.mrp }}</h3>
+
+            <!-- <a [routerLink]="['/productcatdetails', product.pkcode]">View Details</a> -->
+            <!-- <button [routerLink]="['/cart']" class="btn-black-radius">Add to Cart</button> -->
+            <button
+              (click)="addToCart(proddetails.pkcode)"
+              class="btn-black-radius"
+            >
+              Add to Cart
+            </button>
+            <!-- <a [routerLink]="['/cart', proddetails.pkcode]">Add to Cart</a> -->
+            <!-- <a class="btn btn-primary" [routerLink]="['/cart', proddetails.pkcode]">
+                  Add to Cart</a> -->
+          </div>
+
+          <div class="bottom-content">
+            <h3>WHAT IT IS :</h3>
+            <h4>DESTINA 1 {{ proddetails.pkname }}</h4>
+            <!-- <p class="description" [innerHTML]="proddetails.fulldescr"></p> -->
+
+            <p style="margin: 15px 0; font-size: 13px; font-weight: 600">
+              Do You Want To Change The Package?
+              <a routerLink="/products" style="color: #38539a"> Click Here</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fulldescr" [innerHTML]="proddetails.fulldescr"></div>
+    </div>
+  </section>
+</main>
+
+<!-- <div class="prd-desc">
+    <div class="row">
+      <div class="col-md-12">
+  
+        Overview Panel 
+          <div class="card">
+          <div class="card-header" (click)="activePanel = (activePanel === 'overview' ? '' : 'overview')">
+            <h5 class="mb-0">Overview</h5>
+          </div>
+          <div class="card-body" *ngIf="activePanel === 'overview'">
+            Your overview content here 
+            <h4>DESTINA 1 SAPPHIRE COMBO 3</h4>
+            <h6>KEY BENEFITS:</h6>
+            <p>Harmonize harmful EMF and EMR.</p>
+            etc... 
+          </div>
+        </div>
+   -->
+<!-- Description Panel -->
+<!-- <div class="card">
+          <div class="card-header" (click)="activePanel = (activePanel === 'description' ? '' : 'description')">
+            <h6 class="mb-0">Description</h6>
+          </div>
+          <div class="card-body" *ngIf="activePanel === 'description'"> -->
+<!-- Your description content here -->
+<!-- <h6>DESTINA 1 ADVANCE SCALAR ENERGIZED PENDANT</h6> -->
+<!-- etc... -->
+<!-- </div>
+        </div> -->
+
+<!-- Resource Panel -->
+<!-- <div class="card">
+          <div class="card-header" (click)="activePanel = (activePanel === 'resource' ? '' : 'resource')">
+            <h5 class="mb-0">Resource</h5>
+          </div>
+          <div class="card-body" *ngIf="activePanel === 'resource'"> -->
+<!-- Add content here -->
+<!-- <h6>DESTINA 1 Resource SCALAR ENERGIZED PENDANT</h6>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div> -->

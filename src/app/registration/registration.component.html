@@ -1,0 +1,312 @@
+<!-- <main class="container">
+  <div class="row"></div>
+
+  <section class="double-box-reg">
+    <div class="container">
+      @for (item of countryList; track $index) {
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <h5 class="card-title">{{item}}</h5>
+        </div>
+      </div>
+      }
+      </div>
+  </section>
+</main> -->
+
+<main class="container" style="margin-top: 150px">
+  <section class="double-box-reg">
+    <div class="container">
+
+      <!-- Country List -->
+      <div class="row text-center justify-content-center" *ngIf="!selectedCountry">
+        <div
+          class="col-6 col-sm-4 col-md-3 mb-4"
+          *ngFor="let item of countryList; let i = index; trackBy: trackByIndex"
+          (click)="selectCountry(item.name)"
+        >
+          <div class="country-box">
+            <img [src]="item.image" [alt]="item.name" />
+            <h5>{{ item.name }}</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Selected Country Content -->
+      <div class="row" *ngIf="selectedCountry">
+      <div class="row">
+        <div class="col-md-6 rep">
+          <div class="bx-shadow">
+            <div class="top-content">
+              <h2 class="heading1">START YOUR BUSINESS</h2>
+              <h3 class="heading2">
+                AS A DESTINA 1 DIRECT CUSTOMER AND BECOME A DISTRIBUTOR
+              </h3>
+              <a href="#"
+                >SIGN UP here!<i class="fas fa-angle-right ps-2"></i
+              ></a>
+            </div>
+
+            <div class="mid-content">
+              <h5 class="heading4">
+                Why Become a Direct Customer &amp; Become a Distributor
+              </h5>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img src="assets/images/resell.jpe" alt="Resell" />
+                  <p>Resell products for a profit</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/stockist.jpe" alt="Stockist" />
+                  <p>Shop at any DESTINA 1 stocklist nationwide!</p>
+                </div>
+                <div class="col-sm-4">
+                  <img
+                    src="assets/images/build-business.jpe"
+                    alt="Build Business"
+                  />
+                  <p>Build your business with a strong support system</p>
+                </div>
+                <div class="col-sm-6">
+                  <img src="assets/images/income.jpe" alt="Income" />
+                  <p>Earn unlimited income and bonuses</p>
+                </div>
+                <div class="col-sm-6">
+                  <img src="assets/images/accumulate.jpe" alt="Accumulate" />
+                  <p>
+                    Buy Products and Accumulate the sales to Upgrade your
+                    Shopper level
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom-content">
+              <h5 class="heading4">Application Terms</h5>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img src="assets/images/age.jpe" alt="Age" />
+                  <p>18 Years and above</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/Malaysia.png" alt="Malaysia" />
+                  <p>Must be a Citizen or Permanent Resident of Malaysia</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/signupfree.jpe" alt="Sign Up Fee" />
+                  <p>RM 55.00/Sign Up fee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row tandc">
+            <div class="col-sm-12 rep rep1">
+              <h3 class="heading3">
+                I Want to shop Destina1 products and become a distributor later
+              </h3>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="toggleCollapse()"
+              >
+                Become a DDC
+              </button>
+
+              <div [ngClass]="{ collapse: isCollapsed }" id="collapseExample1">
+                <div class="card card-body">
+                  <h3 class="heading2">TERMS &amp; CONDITIONS</h3>
+                  <ul>
+                    <li>
+                      I hereby declare that the above particulars are true and
+                      correct and I will adhere to the
+                      <a href="#">Terms and Conditions</a>
+                    </li>
+                    <li>
+                      I affirm that I have read and understand
+                      <a href="#"
+                        >Direct Sales Contract and Cooling Off Period Terms</a
+                      >. I/We hereby waive the right to a cooling-off period.
+                    </li>
+                    <li>
+                      <a href="#"
+                        >I wish to be contacted or subscribe to future emails
+                        and text messages for sales and marketing promotions
+                        from the Company.</a
+                      >
+                    </li>
+                    <li>
+                      Yes, the DESTINA 1 INTERNATIONAL business model was
+                      presented to me in full detail and all my questions have
+                      been answered to my full satisfaction.
+                    </li>
+                    <li>
+                      Yes, the person who introduced me to DESTINA 1
+                      INTERNATIONAL treated me fairly at all times.
+                    </li>
+                    <li>
+                      I have read and agree to the policies and procedures.
+                    </li>
+                    <li>
+                      I agree to comply with the <a href="#">Code of Ethics</a>
+                    </li>
+                    <li>
+                      I accept and understand the
+                      <a href="#">Earnings and Income Disclaimer</a>
+                    </li>
+                    <li>
+                      I acknowledge and understand that the information
+                      submitted by me will be kept, maintained, and processed
+                      securely for the purposes as outlined in the Company's
+                      policy.
+                    </li>
+                  </ul>
+                  <a href="#">
+                    Become a DDC <i class="fas fa-angle-right ps-2"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 rep">
+          <div class="bx-shadow">
+            <div class="top-content">
+              <h2 class="heading1">START YOUR BUSINESS</h2>
+              <h3 class="heading2">
+                AS A DESTINA 1 DIRECT CUSTOMER AND BECOME A DISTRIBUTOR
+              </h3>
+              <a href="#"
+                >SIGN UP here!<i class="fas fa-angle-right ps-2"></i
+              ></a>
+            </div>
+
+            <div class="mid-content">
+              <h5 class="heading4">
+                Why Become a Direct Customer &amp; Become a Distributor
+              </h5>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img src="assets/images/resell.jpe" alt="Resell" />
+                  <p>Resell products for a profit</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/stockist.jpe" alt="Stockist" />
+                  <p>Shop at any DESTINA 1 stocklist nationwide!</p>
+                </div>
+                <div class="col-sm-4">
+                  <img
+                    src="assets/images/build-business.jpe"
+                    alt="Build Business"
+                  />
+                  <p>Build your business with a strong support system</p>
+                </div>
+                <div class="col-sm-6">
+                  <img src="assets/images/income.jpe" alt="Income" />
+                  <p>Earn unlimited income and bonuses</p>
+                </div>
+                <div class="col-sm-6">
+                  <img src="assets/images/accumulate.jpe" alt="Accumulate" />
+                  <p>
+                    Buy Products and Accumulate the sales to Upgrade your
+                    Shopper level
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom-content">
+              <h5 class="heading4">Application Terms</h5>
+              <div class="row">
+                <div class="col-sm-4">
+                  <img src="assets/images/age.jpe" alt="Age" />
+                  <p>18 Years and above</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/Malaysia.png" alt="Malaysia" />
+                  <p>Must be a Citizen or Permanent Resident of Malaysia</p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="assets/images/signupfree.jpe" alt="Sign Up Fee" />
+                  <p>RM 55.00/Sign Up fee</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row tandc">
+            <div class="col-sm-12 rep rep1">
+              <h3 class="heading3">
+                I Want to shop Destina1 products and become a distributor later
+              </h3>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="toggleCollapse()"
+              >
+                Become a DDC
+              </button>
+
+              <div [ngClass]="{ collapse: isCollapsed }" id="collapseExample1">
+                <div class="card card-body">
+                  <h3 class="heading2">TERMS &amp; CONDITIONS</h3>
+                  <ul>
+                    <li>
+                      I hereby declare that the above particulars are true and
+                      correct and I will adhere to the
+                      <a href="#">Terms and Conditions</a>
+                    </li>
+                    <li>
+                      I affirm that I have read and understand
+                      <a href="#"
+                        >Direct Sales Contract and Cooling Off Period Terms</a
+                      >. I/We hereby waive the right to a cooling-off period.
+                    </li>
+                    <li>
+                      <a href="#"
+                        >I wish to be contacted or subscribe to future emails
+                        and text messages for sales and marketing promotions
+                        from the Company.</a
+                      >
+                    </li>
+                    <li>
+                      Yes, the DESTINA 1 INTERNATIONAL business model was
+                      presented to me in full detail and all my questions have
+                      been answered to my full satisfaction.
+                    </li>
+                    <li>
+                      Yes, the person who introduced me to DESTINA 1
+                      INTERNATIONAL treated me fairly at all times.
+                    </li>
+                    <li>
+                      I have read and agree to the policies and procedures.
+                    </li>
+                    <li>
+                      I agree to comply with the <a href="#">Code of Ethics</a>
+                    </li>
+                    <li>
+                      I accept and understand the
+                      <a href="#">Earnings and Income Disclaimer</a>
+                    </li>
+                    <li>
+                      I acknowledge and understand that the information
+                      submitted by me will be kept, maintained, and processed
+                      securely for the purposes as outlined in the Company's
+                      policy.
+                    </li>
+                  </ul>
+                  <a href="#">
+                    Become a DDC <i class="fas fa-angle-right ps-2"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+   </div>
+  </section>
+</main>
+

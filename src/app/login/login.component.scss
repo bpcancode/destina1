@@ -1,0 +1,104 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background: #f5f4f4;
+    font-family: Arial, sans-serif;
+  }
+  
+
+  .main-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+  
+  .outer {
+    margin: 0 auto;
+    width: 400px;
+    padding: 60px 0;
+  }
+  
+  .outer-content {
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    background: #fff;
+    margin-top:10rem;
+  }
+  
+  .inside-div {
+    padding: 20px 30px;
+  }
+  
+  .inside-div input {
+    width: 100%;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    border: 2px solid #e4e4e4;
+    border-radius: 7px;
+    height: 40px;
+    padding: 10px;
+  }
+  
+  .inside-div h2 {
+    font-size: 26px;
+    // font-weight: 600;
+    margin-bottom: 24px;
+  }
+  
+  .outer p {
+    font-weight: 500;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .pswd {
+    position: relative;
+    background: #2c2c2c;
+    border: 2px solid transparent !important;
+    color: #fff;
+    padding: 15px;
+    font-weight: 600;
+    line-height: 0;
+    border-radius: 30px !important;
+    width: 100%;
+  }
+  
+  .inline {
+    position: relative;
+  }
+  
+  .inline i {
+    position: absolute;
+    top: 35%;
+    right: 10px;
+    color: #c5c1c1;
+    cursor: pointer;
+  }
+  
+  .login-footer {
+    padding: 30px 0 10px;
+    text-align: center;
+  }
+  
+  .login-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .login-footer li {
+    font-size: 13px;
+    border-right: 1px solid #2c2c2c;
+    line-height: 20px;
+    padding: 0 10px;
+    display: inline-block;
+  }
+  
+  .login-footer li:last-child {
+    border: 0;
+  }
+  
+  section.top-footer {
+    margin-top: 55rem !important;
+}

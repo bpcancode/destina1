@@ -1,0 +1,376 @@
+.left-banner img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.right-content {
+  padding: 20px;
+}
+
+.right-content h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.recom-products .d-flex {
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.recom-products img {
+  transition: transform 0.3s ease;
+}
+.recom-products img:hover {
+  transform: scale(1.05);
+}
+
+.PromotionImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0;
+  padding: 0;
+}
+.right-content h5 {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.right-content p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.box-shadow .prod .top-image img {
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.box-shadow h4 {
+  margin-bottom: 20px;
+}
+
+.heading3 {
+  font-size: 16px;
+  margin-top: 25px;
+  font-weight: 600;
+}
+.heading1{text-align: center;}
+
+
+.prod .mid-content {
+  padding: 0 20px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+
+.decrement-increment {
+  border: 0px;
+  background: #dddddd;
+}
+
+.cart {
+  background: #002e5d;
+  border: 0px
+}
+
+.stock-status {
+  color: green;
+}
+
+.quantity-text {
+  border: 0px;
+  text-align: center;
+}
+
+
+// newly added
+
+
+.left-banner img {
+  border-radius: 8px;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.right-content {
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  h5 span {
+    font-weight: 600;
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+
+//19th
+.prod,
+.prod * {
+  // display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  color: #002b5c !important;
+  position: relative !important;
+}
+
+.heading3 {
+    padding: 0 15px;
+    min-height: 45px;
+    font-size: 17px !important;
+}
+.heading3 {
+    color: #002F5F;
+    margin-top: 20px;
+}
+
+.prod .ratings p {
+    color: #55565a;
+    font-size: 13px;
+    font-weight: 500;
+}
+/* Wrapper styles */
+.logos-slide {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Logo image styles */
+.logos-slide img {
+  max-height: 120px;   /* adjust height */
+  width: 254px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Optional hover effect */
+.logos-slide img:hover {
+  transform: scale(1.05);
+}
+
+//news styles
+.card-img-top {
+  height: 265px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.card-text {
+  margin-bottom: 34px; 
+  font-size: 13px;
+  color: #666;
+}
+
+.btn-primary {
+  background-color: #002d5f;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #014080;
+}
+
+/* Custom carousel indicators */
+.carousel-indicators-custom {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 8px;
+}
+
+.carousel-indicators-custom .indicator-bar {
+  width: 40px;
+  height: 3px;
+  background-color: #e0e0e0; /* light gray for inactive */
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-radius: 1px;
+}
+
+.carousel-indicators-custom .indicator-bar.active {
+  background-color: #222; /* dark black for active */
+  height: 4px; /* slightly thicker */
+}
+.carousel-indicators-custom .indicator-bar:hover {
+  background-color: #999;
+  
+}
+.testimonial-section {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.testimonial-author {
+  font-style: italic;
+  color: #485d8f;
+}
+
+.testimonial-section blockquote {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.testimonial-section img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.testimonial-section .btn-outline-primary {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.testimonial-section .carousel-indicators {
+  bottom: -50px;
+}
+.double-box .container {
+  margin-top: 50px;
+  margin-right: 50px
+}
+
+.double-box .row {
+  margin-bottom: 20px;
+}
+
+.img-box {
+  position: relative;
+}
+
+.img-box img {
+  width: 100%;
+  height: auto;
+
+}
+
+.overlay {
+
+opacity: 1;
+background: rgba(255, 255, 255, 0.589);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(3px);
+-webkit-backdrop-filter: blur(3px);
+
+  margin: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.overlay .text h3 {
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(29, 40, 71);
+}
+
+.overlay .text p {
+  padding: 15px;
+  font-size: 16px;
+  color: black;
+}
+
+.overlay .text a {
+  padding: 15px;
+  margin-top: 100px;
+  font-size: 13px;
+  background-color: #002d5f;
+  color: white;
+  text-decoration: none;
+
+}
+// news
+.carousel-indicators-custom .indicator-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #ccc;
+  margin: 0 6px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators-custom .indicator-bar.active {
+  background-color: #002f5f;
+}
+
+.carousel-indicators-custom .indicator-bar {
+  width: 30px;
+  height: 4px;
+  background-color: #ccc;
+  margin: 0 6px;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: background-color 0.3s;
+}
+
+.carousel-indicators-custom .indicator-bar.active {
+  background-color: #002f5f;
+}
+
+// premierpicks
+
+.recom-products .d-flex {
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+}
+.recom-products img {
+  transition: transform 0.3s ease;
+}
+.recom-products img:hover {
+  transform: scale(1.05);
+}
+// newly added in Featured Brands
+
+.logos-brands {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-slide {
+  width: 100%;
+}
+
+.logos-track {
+  display: flex;
+  gap: 3rem;
+  animation: scroll 20s linear infinite;
+  width: max-content;
+}
+
+.logos-slide img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

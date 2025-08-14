@@ -1,0 +1,31 @@
+/* Style all images inside img-box */
+.img-box img {
+    width: 540px;
+    height: 400px;
+    object-fit: cover; /* Keeps aspect ratio and fills the box */
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Optional: make sure the container doesn't restrict size */
+  .img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Optional: remove unwanted padding/margin */
+  .add-bor {
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Optional responsive support */
+  @media (max-width: 768px) {
+    .img-box img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  

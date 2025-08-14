@@ -1,0 +1,210 @@
+<div class="container" style="margin-top: 10rem;">
+  <section class="checkout-wrapper checkout">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="left-blk">
+            <h2 class="heading1">Checkout <span>(1 item)</span></h2>
+
+            <div class="bg-box">
+              <h4>Already have an account? <a routerLink="/login"><b>Sign in for faster checkout.</b></a></h4>
+              <h4>New to Amway?<a routerLink="/create-account"><b>Create an account</b></a> and shop with benefits.</h4>
+            </div>
+
+            <!-- Product Info -->
+            <div class="border-top row">
+              <div class="col-sm-3">
+                <img src="assets/images/2151.jpg" width="100%">
+              </div>
+              <div class="col-sm-9">
+                <h4><a href="#"  style="font-size: 1.5rem; color: black;text-decoration: none;">D1 PHYTOMILK ASE DEEP MOISTURE BODY SHOWER CREAM</a></h4>
+                <h5><span>Product Code</span>: MYJD02</h5>
+                <h4 style="margin-top: 15px;">$19.00 <span class="green-bg">In Stock</span></h4>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-lg-8 col-md-9 col-sm-6 col-6">
+                        <div class="number">
+                          <span class="minus" (click)="decreaseQuantity()">-</span>
+                          <input type="text" [value]="quantity" readonly>
+                          <span class="plus" (click)="increaseQuantity()">+</span>
+                        </div>
+                      </div>
+                      <div class="col-lg-4 col-md-3 col-sm-6 col-2">
+                        <i class="far fa-trash-alt" style="margin-top: 15px; cursor: pointer;"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 text-end">
+                    <h4 style="margin-top: 15px;">$19.00</h4>
+                    <span class="text-primary" style="font-size: 14px;"><i class="fa fa-heart"></i> 35 AmPerks Points</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Handling Method -->
+            <div class="next-block method mt-4">
+              <div class="row">
+                <div class="col-sm-4">
+                  <h4 class="text-muted mt-2">Handling Method</h4>
+                </div>
+                <div class="col-sm-3">
+                  <input type="radio" name="handling" id="selfCollect"> <label for="selfCollect">Self Collect</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="radio" name="handling" id="shippingMethod"> <label for="shippingMethod">Shipping Method</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Shipping Form -->
+            <h3 class="heading2 mt-4">Shipping</h3>
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" placeholder="John">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" placeholder="Smith">
+                  </div>
+                </div>
+              </div>
+
+              <!-- (additional shipping fields...) -->
+              <!-- Repeat all the address form fields from original HTML -->
+            </form>
+
+            <a href="#" class="btn">Verify</a>
+
+            <!-- Distributor Signup Info -->
+            <div class="next-block mt-4">
+              <h3 class="heading2">Distributor Signup Details - Profile Review</h3>
+              <div class="row">
+                <div class="col-sm-6">
+                  <ul>
+                    <li><span class="heading4">Full Name</span> destina1 international</li>
+                    <!-- other items... -->
+                  </ul>
+                </div>
+                <div class="col-sm-6">
+                  <ul>
+                    <li><span class="heading4">Address 1</span> ABC Street</li>
+                    <!-- other items... -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Agreement -->
+            <div class="next-block bg-light p-3 rounded mt-4">
+              <p><input type="checkbox" checked> I agree to the <a href="#">Purchase Terms & Conditions</a></p>
+              <h4>Order Total: RM 235.00</h4>
+            </div>
+
+            <!-- Payment Section -->
+            <div class="next-block">
+              <h3 class="heading2">Payment</h3>
+              <div>
+                <input type="radio" name="payment" id="paypal"> <label for="paypal">PayPal</label>
+                <p>Pay in 4 interest-free payments of $11.23 with <img src="assets/images/paypal.svg" width="60"> <a href="#">Learn More</a></p>
+              </div>
+              <div>
+                <input type="radio" name="payment" id="card"> <label for="card">Credit/Debit Card</label>
+              </div>
+
+              <!-- Card Form -->
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label>Name on Card</label>
+                    <input type="text" class="form-control" placeholder="John Smith">
+                  </div>
+                </div>
+              </div>
+              <!-- More card fields (number, expiry, CVV)... -->
+
+              <a href="#" class="btn">Next</a>
+            </div>
+
+            <!-- Final Order -->
+            <div class="next-block">
+              <h3 class="heading2">Finalize & Place Order</h3>
+              <h4 class="heading4">Order Total: $44.95</h4>
+              <p>I've confirmed my information above is correct.</p>
+              <button class="btn-black-radius">Place Order</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Order Summary -->
+        <div class="col-lg-4">
+          <div class="right-blk pos-sticky">
+            <div class="colored-blk">
+              <h2 class="headin2">Order Summary</h2>
+              <ul>
+                <li>Subtotal <span>$35.00</span></li>
+                <li>Estimated Shipping <span>$9.95</span></li>
+                <li class="fw-bold">Estimated Total <span>$44.95</span></li>
+              </ul>
+            </div>
+
+            <div class="colored-blk mt-3">
+              <h2 class="headin2">Add a Coupon Code</h2>
+              <div class="row">
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" placeholder="Enter Coupon Code">
+                </div>
+                <div class="col-sm-5">
+                  <button class="btn btn-link">Apply</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /row -->
+    </div>
+  </section>
+
+  <!-- Recommended Products -->
+  <section class="recom-products">
+    <div class="container">
+      <div class="row">
+        <h2 class="heading1">You May Also Like</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let product of recommendedProducts">
+          <div class="prod">
+            <a href="#">
+              <div class="top-image">
+                <img [src]="product.image" class="lazyload">
+                <h4 class="heading3">{{ product.name }}</h4>
+              </div>
+              <div class="mid-content">
+                <div class="ratings">
+                  <ul>
+                    <li *ngFor="let _ of [].constructor(5)"><i class="fa fa-star"></i></li>
+                  </ul>
+                  <span>({{ product.reviews }})</span>
+                </div>
+                <div class="cost">
+                  <h6 class="heading4">{{ product.price }}</h6>
+                  <p><i class="fa fa-heart"></i>{{ product.likes }}</p>
+                </div>
+              </div>
+              <div class="btn-content">
+                <button class="btn-black">View Details</button>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,253 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" routerLink="/">Destina1</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+   -->
+<!-- Top Bar -->
+<!-- <div class="top-bar">
+  
+     <a routerLink="/start">Start A Business</a>
+    <a href="#">Partner Brand</a>
+  </div> -->
+  <!-- Top Bar -->
+<div class="top-bar">
+  <a routerLink="/start" style="font-size: 12px;">Start A Business</a>
+  <a href="https://destina1.com/PartnerBrand/PBLogin.html" style="font-size: 12px;" target="_blank" rel="noopener noreferrer">
+    Partner Brand
+  </a>
+</div>
+
+  
+  <!-- Main Header -->
+  <div class="main-header">
+    <div class="logo">
+      <a routerLink="/home"> 
+      <img src="https://beta.destina1.com/images/new-logo-white.png" alt="Destina1 Logo" style="width: 200px;" />
+      </a>
+    </div>
+  
+    <div class="search-box">
+      <input type="text" placeholder="What are you looking for?" />
+      <i class="fas fa-search"></i>
+    </div>
+  
+    <div class="auth-links">
+      <!-- <div class="dropdown">Help <i class="fas fa-caret-down"></i></div> -->
+
+  <ul class="nav-menu">
+  <li class="nav-item helpdropdown"
+      (mouseenter)="isHelpDropdownOpen = true"
+      (mouseleave)="isHelpDropdownOpen = false"
+      style="position: relative;">
+    <a style="font-size: 15px;" href="#" class="nav-helplink">
+      Help <i class="fas" [ngClass]="isHelpDropdownOpen ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+    </a>
+    
+    <!-- <div class="dropdown-helpcontent" *ngIf="isHelpDropdownOpen">
+      <a class="helpcontent" routerLink="/shipping-delivery">Shipping & Delivery</a>
+      <a class="helpcontent" routerLink="/orders-returns">Orders & Returns</a>
+      <a class="helpcontent" routerLink="/orders-cancellation">Orders Cancellation</a>
+    </div> -->
+    <div class="dropdown-helpcontent" *ngIf="isHelpDropdownOpen">
+  <ul class="help-list">
+    <li><a routerLink="/shipping-delivery">Shipping & Delivery</a></li>
+    <li><a routerLink="/orders-returns">Orders & Returns</a></li>
+    <li><a routerLink="/orders-cancellation">Orders Cancellation</a></li>
+  </ul>
+</div>
+  </li>
+</ul>
+
+
+
+     <div class="Register-link">
+        <a  routerLink="/Register"style="font-size:15px; color: #fff;text-decoration: none;"><i class="fa-solid fa-user"></i> Register</a>
+     </div>
+      <div class="login-link">
+        <a routerLink="/login" style=" font-size:15px;color:  #fff;text-decoration: none;"><i class="fas fa-lock"></i> Login</a>
+      </div>
+      <div class="cart-icon">
+        <a routerLink="/headercart" class="cart-link">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <!-- <span class="cart-count" *ngIf="cartCount > 0">{{ cartCount }}</span> -->
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <nav class="nav-bar d-flex justify-content-between">
+  <ul class="nav-list">
+    <!-- Dropdown Nav Item -->
+    <li class="nav-item dropdown" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+      <a href="#" class="nav-link" (click)="toggleDropdown($event)">
+      Shop Products <i class="fas" [ngClass]="isDropdownOpen ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+      </a>
+      <div class="dropdown-content" *ngIf="isDropdownOpen">
+        <div class="column">
+          <h4><i class="fas fa-box"></i> Kritalia & Co</h4>
+          <!-- <a routerLink="/kritalia">View All</a> -->
+        </div>
+        <div class="column">
+          <h4><i class="fas fa-heartbeat"></i> Wellness Care</h4>
+          <a routerLink="/wellness/pendant">Uniwave Pendant</a>
+          <a routerLink="/wellness/flask">Uniwave Flask</a>
+          <a routerLink="/wellness/stick">Uniwave Stick</a>
+          <a routerLink="/wellness/shield">Uniwave Bio Matrix Shield</a>
+          <a routerLink="/viewall">View All</a>
+        </div>
+      </div>
+    </li>
+
+    
+     <li class="nav-item dropdown" (mouseenter)="showAboutDropdown()" (mouseleave)="hideAboutDropdown()">
+      <a href="#" class="nav-link" (click)="toggleAboutDropdown($event)">
+      About <i class="fas" [ngClass]="isAboutDropdownOpen ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+      </a>
+       <div class="dropdown-content" *ngIf="isAboutDropdownOpen">
+        <div class="column">
+        <a routerLink="/our-company">Our Company</a>
+        <a routerLink="/vision-mission">Vision & Mission</a>
+        <a routerLink="/history">Background & History</a>
+        <a routerLink="/advisory-board">Products Advisory Board</a>
+        <a routerLink="/ceo">Founder & Group CEO</a>
+        <a routerLink="/vp">Co-Founder & Group Vice President</a>
+        <a routerLink="/coo">Group Chief Operating Officer</a>
+        <a routerLink="/cmo">Group Chief Marketing Officer</a>
+        <a routerLink="/bdo">Group Business Development Officer</a>
+        <a routerLink="/vp-usa">Chief Business Development Officer & VP USA</a>
+        <a routerLink="/strategy-officer">Chief Strategy Officer</a>
+           </div>
+      </div>
+    </li>
+
+    <!-- <li class="nav-item"><a class="nav-link" routerLink="/about">About</a></li> -->
+   <!-- Brand Dropdown -->
+<!-- <li class="nav-item dropdown"
+    (mouseenter)="showBrandDropdown()"
+    (mouseleave)="hideBrandDropdown()">
+  <a href="#" class="nav-link">
+    Brand <i class="fas" [ngClass]="isBrandDropdownOpen ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+  </a>
+  
+ <div class="mega-menu brand-menu logos" *ngIf="isBrandDropdownOpen">
+    <img src="https://destina1.com/images/LOGO-QUANTES-TECHNOLOGY.png" alt="Quantes Technology"  style="width: 10%;"/>
+    <img src="https://destina1.com/images/biomatrix-shield-brand-logo.png" alt="Sheild" />
+    <img src="https://destina1.com/images/LOGO-SCALARVIA.png" alt="ScalarVia" />
+    <img src="https://destina1.com/images/LOGO-KRITALIA&CO.png" alt="Kritalia" />
+   
+  </div>
+</li> -->
+
+    <li class="nav-item dropdown"
+    (mouseenter)="showBrandDropdown()"
+    (mouseleave)="hideBrandDropdown()">
+  <a href="#" class="nav-link">
+    Brand
+    <i class="fas" [ngClass]="isBrandDropdownOpen ? 'fa-angle-up' : 'fa-angle-down'"></i>
+  </a>
+
+  <div class="mega-menu brand-menu logos" *ngIf="isBrandDropdownOpen">
+    <a href="https://destina1.com/#/quantes-technology" target="_blank" rel="noopener noreferrer">
+      <img src="https://destina1.com/images/LOGO-QUANTES-TECHNOLOGY.png" alt="Quantes Technology" />
+    </a>
+    <a href="https://destina1.com/UniwaveBiomatrixShield/biomatrix-shield.html" target="_blank" rel="noopener noreferrer">
+      <img src="https://destina1.com/images/biomatrix-shield-brand-logo.png" alt="Shield" />
+    </a>
+    <a href="https://destina1.com/#/uniwave-scalarvia" target="_blank" rel="noopener noreferrer">
+      <img src="https://destina1.com/images/LOGO-SCALARVIA.png" alt="ScalarVia" />
+    </a>
+    <!-- <a href="https://destina1.com/#/kritaliaCo" target="_blank" rel="noopener noreferrer">
+      <img src="https://destina1.com/images/LOGO-KRITALIA&CO.png" alt="Kritalia" />
+    </a> -->
+    <a href="https://destina1.com/#/kritaliaCo" target="_blank" rel="noopener noreferrer">
+  <img style="margin-top: 41px;" src="https://destina1.com/images/LOGO-KRITALIA&CO.png" alt="Kritalia &amp; Co" />
+</a>
+
+  </div>
+</li>
+
+    <li class="nav-item"><a class="nav-link" routerLink="/Discover">Discover</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/events">Events</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/news">News</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/awards">Awards</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/contact">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/testmonials" >Testimonials</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/ingredients">Ingredients</a></li>
+    <li class="nav-item"><a class="nav-link" routerLink="/dvtv">D' Video TV</a></li>
+
+  </ul>
+</nav>
+ 
+<!-- <nav class="nav-bar d-flex justify-content-between">
+  <ul class="nav-list">
+    <li class="nav-item dropdown" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+      <a href="#" class="nav-link" (click)="toggleDropdown($event)">
+      Shop Products <i class="fas" [ngClass]="isDropdownOpen ? 'fa fa-angle-up' : 'fa fa-angle-down'"></i>
+      </a>
+      <div class="dropdown-content" *ngIf="isDropdownOpen">
+        <div class="column">
+          <h4><i class="fas fa-box"></i> Kritalia & Co</h4>
+          <a routerLink="/kritalia">View All</a>
+        </div>
+        <div class="column">
+          <h4><i class="fas fa-heartbeat"></i> Wellness Care</h4>
+          <a routerLink="/wellness/pendant">Uniwave Pendant</a>
+          <a routerLink="/wellness/flask">Uniwave Flask</a>
+          <a routerLink="/wellness/stick">Uniwave Stick</a>
+          <a routerLink="/wellness/shield">Uniwave Bio Matrix Shield</a>
+          <a routerLink="/wellness">View All</a>
+        </div>
+      </div>
+    </li>
+     <li class="nav-item dropdown">
+      <a class="nav-link">About <i class="fas fa-chevron-down"></i></a>
+      <div class="mega-menu about-menu">
+        <a routerLink="/our-company">Our Company</a>
+        <a routerLink="/vision-mission">Vision & Mission</a>
+        <a routerLink="/history">Background & History</a>
+        <a routerLink="/advisory-board">Products Advisory Board</a>
+        <a routerLink="/ceo">Founder & Group CEO</a>
+        <a routerLink="/vp">Co-Founder & Group Vice President</a>
+        <a routerLink="/coo">Group Chief Operating Officer</a>
+        <a routerLink="/cmo">Group Chief Marketing Officer</a>
+        <a routerLink="/bdo">Group Business Development Officer</a>
+        <a routerLink="/vp-usa">Chief Business Development Officer & VP USA</a>
+        <a routerLink="/strategy-officer">Chief Strategy Officer</a>
+      </div>
+    </li> -
+
+
+    <li class="nav-item dropdown">
+      <a class="nav-link">Brand <i class="fas fa-chevron-down"></i></a>
+      <div class="mega-menu brand-menu logos">
+        <img src="assets/images/quantes.png" alt="Quantes Technology" />
+        <img src="assets/images/scalarvia.png" alt="ScalarVia" />
+        <img src="assets/images/kritalia.png" alt="Kritalia" />
+      </div>
+    </li>
+    <li><a routerLink="/discover">Discover</a></li>
+    <li><a routerLink="/events">Events</a></li>
+    <li><a routerLink="/news">News</a></li>
+    <li><a routerLink="/awards">Awards</a></li>
+    <li><a routerLink="/contact">Contact</a></li>
+    <li><a routerLink="/testimonials">Testimonials</a></li>
+    <li><a routerLink="/ingredients">Ingredients</a></li>
+  </ul>
+</nav> -->

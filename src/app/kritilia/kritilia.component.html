@@ -1,0 +1,162 @@
+
+<main class="container-fluid" style="font-family: 'Poppins', sans-serif;">
+  <div class="row">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href="#">Kritalia & CO</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- Kritalia & Co Content Start -->
+  <section class="banner-double-box" style="margin-top: 0;">
+    <div class="row" style="margin-right: 0;margin-left: 0;">
+      <div class="col-sm-8 p-0">
+        <video src="assets/images/Kritalia&CO/Kritalia&CO.mp4" width="100%" height="100%" autoplay muted loop playsinline disablepictureinpicture preload="auto" poster="assets/images/kritalia&CO-banner.jpg" style="margin-top: -2px;"></video>
+      </div>
+      <div class="col-sm-4 d-flex p-0">
+        <h3 class="main-title1" style="font-size: 22px;">Discover Elegance Redefined with Kritalia&Co.</h3>
+        <p>A Legacy of Craftsmanship Since 1963...</p>
+        <a routerLink="/kritaliaproductsshop" class="btn-peach-bor" style="color: #CB8161;">Shop Now <i class="fa-solid fa-angle-right" style="padding-left: 5px;"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="zigzag-blk p-5">
+    <div class="container-fluid" style="padding:0;">
+      <div class="row">
+        <div class="text-center">
+          <img src="assets/images/Kritalia&CO/necklace.png" style="width: 120px;">
+          <span>KRITALIA JEWELLERY</span>
+          <h4>Each piece in our curated selection is a testament...</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="blk-1">
+            <img src="assets/images/new-arrival-image.jpg">
+            <div class="zigzag-content">
+              <h3>New Arrivals</h3><a routerLink="/kritaliaproductsshop" class="btn-white-bor">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="blk-2">
+            <img src="assets/images/best-seller-image.jpg">
+            <div class="zigzag-content">
+              <h3>Best Seller</h3>
+              <a routerLink="/kritaliaproductsshop" class="btn-white-bor">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk-4 p-6">
+    <div class="container-fluid" style="padding:0;">
+      <div class="row">
+        <div class="heading-centered text-center">
+          <h3 class="main-title1">Shop by Category</h3>
+          <p style="font-size: 14px;">Brilliant design and unparalleled craftsmanship.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let cat of categories">
+          <div class="main-blk">
+            <div class="image-blk">
+              <a (click)="fGetCatProduct(cat.name)" style="cursor:pointer;">
+                <img [src]="cat.img">
+              </a>
+            </div>
+            <div class="btn-blk">
+              <a (click)="fGetCatProduct(cat.name)" style="cursor:pointer;" class="btn-white">{{ cat.name }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner2">
+    <div class="container-fluid">
+      <div class="banner2-content">
+        <h3 class="main-title1">Discover Timeless Love.</h3>
+        <p>For Moments That Matter, For Love That Lasts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trending-products p-6">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading-centered text-center">
+          <h3 class="main-title1">Trending Products</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6" *ngFor="let prd of trendingProducts">
+          <div class="white-bg-prod">
+            <div class="img-blk">
+              <a (click)="fGetSngProduct(prd)" style="cursor:pointer;">
+                <img [src]="prd.img">
+                <p>New</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="our-stories p-6">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading-centered text-center">
+          <h3 class="main-title1">The Art of Gifting</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" *ngFor="let gift of giftCategories">
+          <a routerLink="/kritaliaproductsshop">
+            <img [src]="gift.img">
+          </a>
+          <div class="stories-cont">
+            <a routerLink="/kritaliaproductsshop">
+              <h2>{{ gift.title }}</h2>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inner-banner">
+    <div class="row" style="margin-right: 0;">
+      <div class="col-sm-6">
+        <img src="assets/images/at-your-servcice.jpg">
+      </div>
+      <div class="col-sm-6 d-flex">
+        <h3 class="main-title1" style="font-weight: 400; margin-top: 10px;">At Your Service</h3>
+        <p>Enhance your gifting with Kritalia & Co. Client Advisors...</p>
+        <a routerLink="/customer-service" class="btn-black-bor" style="margin-top: 20px; font-weight: 600;">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="blk-3 p-5">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading-centered text-center">
+          <h3 class="main-title1">The Kritalia Experience</h3>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Icons and content here - use static or loop if needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Kritalia & Co Content End -->
+</main>

@@ -1,0 +1,118 @@
+<div class="container">
+  <h4 class="heading1 text-center mb-4" style="color: #002F5F;font-size: 32px;font-weight: 600;">
+    TRENDING ON SOCIAL MEDIA #DESTINA 1
+  </h4>
+
+  <div class="d-flex justify-content-center mb-3" style="border-radius: 50%;">
+    <button class="btn btn-primary mx-1" (click)="selectedTab = 'facebook'"><i class="fa-brands fa-facebook-f"></i></button>
+    <button class="btn btn-danger mx-1" (click)="selectedTab = 'instagram'" style="background: linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7);"><i class="fa-brands fa-instagram"></i></button>
+    <button class="btn btn-danger mx-1" (click)="selectedTab = 'tiktok'"><i class="fa-brands fa-tiktok"></i></button>
+    <button class="btn btn-danger mx-1" (click)="selectedTab = 'youtube'"><i class="fa-brands fa-youtube"></i></button>
+    <button class="btn btn-danger mx-1" (click)="selectedTab = 'linkedIn'"><i class="fa-brands fa-linkedin-in"></i></button>
+  </div>
+  <!-- <div class="tabs">
+  <div 
+    class="f-tab" 
+    *ngFor="let tab of socialTabs" 
+    style="padding:0;"
+    (click)="selectTab(tab.id)"
+  >
+    <label class="tab" [id]="tab.id + '-tab'" [for]="tab.id">
+      <i 
+        class="{{ tab.icon }}" 
+        [ngStyle]="{ background: tab.background, color:'#fff' }"
+        [class.active]="selectedTab === tab.id"
+      ></i>
+    </label>
+  </div>
+</div> -->
+  <!-- Facebook Panel -->
+  <div *ngIf="selectedTab === 'facebook'">
+    <ngb-carousel *ngIf="chunkedFacebookSlides.length" [interval]="3000" [pauseOnHover]="true" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let group of chunkedFacebookSlides">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of group">
+        <div class="image-blk">
+          <a [href]="item.url" target="_blank" [ngClass]="{ 'vid': item.video }">
+            <img [src]="item.image" class="lazyload w-100" />
+            <i *ngIf="item.video" class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+
+  <!-- Instagram Panel -->
+  <div *ngIf="selectedTab === 'instagram'">
+    <ngb-carousel *ngIf="chunkedInstagramSlides.length" [interval]="3000" [pauseOnHover]="true" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let group of chunkedInstagramSlides">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of group">
+        <div class="image-blk">
+          <a [href]="item.url" target="_blank" [ngClass]="{ 'vid': item.video }">
+            <img [src]="item.image" class="lazyload w-100" />
+            <i *ngIf="item.video" class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+
+  <!-- tiktok Panel -->
+  <div *ngIf="selectedTab === 'tiktok'">
+     <ngb-carousel *ngIf="chunkedtiktokSlides.length" [interval]="3000" [pauseOnHover]="true" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let group of chunkedtiktokSlides">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of group">
+        <div class="image-blk">
+          <a [href]="item.url" target="_blank" [ngClass]="{ 'vid': item.video }">
+            <img [src]="item.image" class="lazyload w-100" />
+            <i *ngIf="item.video" class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+
+  <!-- youtube Panel -->
+  <div *ngIf="selectedTab === 'youtube'">
+    <ngb-carousel *ngIf="chunkedyoutubeSlides.length" [interval]="3000" [pauseOnHover]="true" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let group of chunkedyoutubeSlides">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of group">
+        <div class="image-blk">
+          <a [href]="item.url" target="_blank" [ngClass]="{ 'vid': item.video }">
+            <img [src]="item.image" class="lazyload w-100" />
+            <i *ngIf="item.video" class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+
+  <!-- linked in Panel -->
+  <div *ngIf="selectedTab === 'linkedIn'">
+    <ngb-carousel *ngIf="chunkedlinkedinSlides.length" [interval]="3000" [pauseOnHover]="true" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let group of chunkedlinkedinSlides">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of group">
+        <div class="image-blk">
+          <a [href]="item.url" target="_blank" [ngClass]="{ 'vid': item.video }">
+            <img [src]="item.image" class="lazyload w-100" />
+            <i *ngIf="item.video" class="fa-solid fa-play"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+<!-- <div class="product-grid">
+  <div class="product-card" style="margin-top: 10rem;" *ngFor="let product of products">
+    <img [src]=" 'assets/images/' + product.Pimage || 'assets/images/default-product.png'" 
+         alt="{{ product.productName }}" 
+         class="product-image" />
+
+    <h3>{{ product.productName }}</h3>
+    <p><strong>Product Code:</strong> {{ product.pcode }}</p>
+    <p><strong>Retail Price:</strong> ₹{{ product.pkid }}</p>
+    <p><strong>DDC/DD Price:</strong> ₹{{ product.DP }}</p>
+
+    <p *ngIf="product.stockStatus === 'In Stock'" class="in-stock">✔ In Stock</p>
+
+    <div class="quantity-controls">
+      <span>{{ product.quantity }}</span>
+      <button (click)="product.quantity = product.quantity + 1">+</button>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <section class="recom-products box-shadow">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of products">
+        <div class="prod">
+          <a href="#">
+            <div class="top-image">
+              <img [src]="'http://admin.destina1.com/admin/RetailImages/' + product.Pimage || 'assets/images/destina1-logo.png'" [alt]="product.pkname">
+              <h4 class="heading3">{{ product.pkname }}</h4>
+            </div>
+            <div class="mid-content">
+              <div class="ratings">
+                <p>Product Code : {{ product.pkcode }}</p>
+              </div>
+              <div class="cost">
+                <h6 class="heading4">{{ product.mrp }}</h6>
+              </div>
+            </div>
+            <div class="btn-content">
+              <a >View Details</a>
+               <a href="/productcatdetails">view details</a> 
+            </div>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- <div class="row">
+  <div class="col-md-3 col-sm-6" *ngFor="let product of viewalldata">
+    <div class="just-prod text-center">
+      <a href="#">
+        <img [src]="product.productImage" class="img-fluid" alt="{{ product.productName }}">
+      </a>
+      <a href="#" class="heading3">
+        {{ product.productName }} <i class="fas fa-angle-right" style="padding-left: 7px;"></i>
+      </a>
+    </div>
+  </div>
+</div> -->
+
+<section class="recom-products box-shadow viewsection">
+  <div class="container">    
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of viewalldata">
+        <div class="prod">
+          <a href="#">
+            <div class="top-image">
+              <img [src]="product.pkgimage" [alt]="product.pkname">
+              <!-- <h4 class="heading3">{{ product.pkname }}</h4> -->
+
+              <h6 class="heading3">
+              {{ product.pkname.length > 15 ? (product.pkname | slice:0:15) + '...' : product.pkname }}
+              </h6>
+            </div>
+            <div class="mid-content">
+              <div class="ratings">
+                <p>Product Code : {{ product.pkcode }}</p>
+              </div>
+              <div class="cost">
+                <h6 class="heading4">{{ product.mrp }}</h6>
+              </div>
+              <!-- <div class="qty-selector">
+                <button (click)="decreaseQty(product)">-</button>
+                <input type="text" [value]="product.quantity" readonly />
+                <button (click)="increaseQty(product)">+</button>
+            </div> -->
+            </div>
+            <div class="btn-content">
+              <a [routerLink]="['/productcatdetails', product.pkcode]">View Details</a>
+              <!-- <a href="/productcatdetails">view details</a> -->
+            </div>
+            
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    

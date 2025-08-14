@@ -1,0 +1,125 @@
+.footer {
+    background: #fff;
+    padding: 40px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .footer-column {
+    flex: 1 1 180px;
+    margin: 10px;
+  }
+  
+  .footer-column h4 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 6px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .footer-column ul li:hover {
+    text-decoration: underline;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    background: #002b5c;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  .heading4 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.footer-menu {
+    width: 97%;
+    margin: 50px auto;
+}
+.main-footer .heading4 {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    color: #55565A;
+}
+.heading4 {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 600;
+}
+.footer-menu li a {
+    font-size: 11px;
+}
+
+.footer-menu li a {
+    transition: 0.5s all ease-out;
+    color: #55565A;
+}
+//social
+.social-icons li i {
+    background: #022f60;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    transition: all ease-out 0.5s;
+    border: 1px solid transparent;
+    font-size: 15px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+}
+.social-icons {
+    margin: 0;
+}
+
+.social-icons {
+    text-align: center;
+    margin: 40px 0;
+}
+.social-icons ul {
+    text-align: left;
+}
+ .social-icons ul {
+            text-align: center;
+        }
+//24th june 2025
+footer {color: #55565A;}
+footer ul li
+ {
+    display: inline-block;
+    padding: 0 6px;
+    line-height: 14px;
+    border-right: 1px solid #2c2c2c;
+    color: #55565A;
+}
+footer ul {
+  margin: 20px 0px;
+}
+a:hover {
+    text-decoration: none;
+    color: #55565A;
+}
+footer ul li a{ color:#55565A; }

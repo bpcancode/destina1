@@ -1,0 +1,297 @@
+<!-- <div class="container" style="margin-top: 12rem;">
+  <section class="checkout-wrapper">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="left-blk">
+
+          <h2>Your Cart <span style="font-size: 24px;font-weight: 400;margin-left: 10px;">({{ cartItems.length }} item{{
+              cartItems.length > 1 ? 's' : '' }})</span></h2>
+
+          <div *ngFor="let item of cartItems; let i = index" class="row border-top">
+            <div class="col-sm-3"> -->
+              <!-- <img [src]="item.image" width="100%" /> -->
+              <!-- <img [src]="item.image ? 'assets/images/' + item.image : 'assets/images/default.jpg'" width="100%" />
+
+            </div>
+            <div class="col-sm-9">
+              <h4>{{ item.name }}</h4>
+              <h5><span>Product Code</span>: {{ item.code }}</h5>
+              <h4>${{ item.price.toFixed(2) }} <span class="green-bg" *ngIf="item.inStock">In Stock</span></h4>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="number">
+                    <span class="minus" (click)="decrementQty(item)">-</span>
+                    <input type="text" [(ngModel)]="item.quantity" />
+                    <span class="plus" (click)="incrementQty(item)">+</span>
+                  </div> -->
+                  <!-- <i class="far fa-trash-alt" (click)="removeItem(i)" style="cursor: pointer;"></i>
+                </div>
+                <div class="col-md-6 text-right">
+                  <h4>${{ (item.quantity * item.price).toFixed(2) }}</h4>
+                  <span><i class="fa fa-heart"></i> {{ item.amPerks * item.quantity }} AmPerks Points</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="border-top border-bottom"> -->
+            <!-- <h3>Billing Address</h3>
+            <h5>Handling Method</h5> -->
+            <!-- <label><input type="radio" name="handle" value="Self Collect" (change)="selectHandling('Self Collect')"> Self Collect</label><br /> -->
+            <!-- <label><input type="radio" name="handle" value="Shipping" (change)="selectHandling('Shipping')"> Shipping Method</label> -->
+          <!-- </div>
+        </div> -->
+      <!-- </div>
+      <div class="col-lg-4">
+        <div class="right-blk pos-sticky">
+          <div class="colored-blk">
+            <h2>Order Summary</h2>
+            <ul>
+              <li>Subtotal <span>${{ subtotal.toFixed(2) }}</span></li>
+              <li>Estimated Shipping <span>${{ shipping.toFixed(2) }}</span></li>
+              <li><strong>Estimated Total</strong> <span>${{ total.toFixed(2) }}</span></li>
+            </ul>
+            <a class="btn btn-black-radius" style="background: #2c2c2c; color: white">Enter sponser id</a>
+            <a routerLink="/checkout" class="btn btn-black-radius" style="background: #fff;">Submit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div> -->
+
+  <!--  <section class="recom-products">
+    <h2>You May Also Like</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let prod of recommendedProducts">
+        <div class="prod">
+          <div class="top-image">
+            <img [src]="prod.image"  width="100%"/>
+            <h4>{{ prod.name }}</h4>
+          </div>
+          <div class="mid-content">
+            <div class="ratings">
+              <ul>
+                <li *ngFor="let star of [].constructor(prod.rating)"><i class="fa fa-star"></i></li>
+              </ul>
+              <span>({{ prod.reviews }})</span>
+            </div>
+            <div class="cost">
+              <h6>RM {{ prod.price.toFixed(2) }}</h6>
+              <p><i class="fa fa-heart"></i> {{ prod.hearts }}</p>
+            </div>
+          </div>
+          <div class="btn-content">
+            <button class="btn-black">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+
+
+
+
+  <div class="row m-0">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#/Home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Parent Link</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Page Header</li>
+        </ol>
+    </nav>
+</div>
+<div class="col-md-12 p-0">
+    <div class="main-panel">
+        <div class="main-panel-content">
+            <h2 class="title-heading heading1" style="display: inline-block;">SHOPPING CART <span>(0)</span></h2>
+            <section class="checkout-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="left-blk">
+                                <div class="row bg-row">
+                                    <div class="col-sm-5">
+                                        <h4>PRODUCT DETAILS</h4>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <h4>QTY</h4>
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <h4></h4>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <h4>PRICE</h4>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <h4>TOTAL</h4>
+                                    </div>
+                                </div>
+                                <div *ngFor="let item of cartItems; let i = index"  class="row">
+                                    <div class="col-sm-12">
+                                        <div class="s-gap">
+                                            <div class="row">
+                                                <div class="col-sm-5">
+                                                    <div class="row">
+                                                        <div class="col-sm-3" style="padding: 0;">
+                                                          
+                                                          <img [src]="item.image ? 'assets/images/' + item.image : 'assets/images/default.jpg'" width="100%" />
+                                                        </div>
+                                                        <div class="col-sm-9">
+                                                            <h4 style="font-size: 16px;font-weight: 500;margin-bottom:10px;"><a href="#">{{item.name}}</a></h4>
+                                                            <h5 style="color: #55565a; font-size: 15px;font-weight: 500;"><span style="color: #55565a;">Product Code </span>: {{item.code}}</h5>
+                                                            <h4 style="margin-top: 5px;font-size: 15px; color:#55565a;font-weight: 500;">CV : {{ item.cv }} <span class="green-bg" *ngIf="item.inStock">In Stock</span></h4>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-2 col-8">
+                                                    <div class="number">
+                                                        <span class="minus" (click)="decrementQty(item)"><i class="fa-solid fa-minus"></i></span>
+                                                        <input type="text" value="{{item.quantity}}" style="margin: -4px;width: 24px;height:30px; line-height:24px;text-align: center;">
+                                                        <span class="plus" (click)="incrementQty(item)"><i class="fa-solid fa-plus"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-1 col-4">
+                                                    <span style="float: right;font-size: 14px; margin-top: 3px; margin-right: 7px;"><i class="fa fa-trash"></i></span>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <h5>{{item.price}}</h5>
+                                                </div> 
+                                                <div class="col-sm-2">
+                                                    <h3>{{ (item.quantity * item.price).toFixed(2) }}</h3>
+                                                    <span><i class="fa fa-heart"></i> {{ item.amPerks * item.quantity }} AmPerks Points</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-top border-bottom">
+                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h3 class="modal-title" id="exampleModalCenterTitle">Select Products</h3>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h3>Promotional Products In The Package 123</h3>
+                                                    <h3>Products Selected Should Be Of Total Quantity : <span class="red">5</span></h3>
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">S.No</th>
+                                                                    <th scope="col">Product Code</th>
+                                                                    <th scope="col">Name</th>
+                                                                    <th scope="col">Amount</th>
+                                                                    <th scope="col">Maximum Quantity</th>
+                                                                    <th scope="col">Quantity</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1</td>
+                                                                    <td>P123</td>
+                                                                    <td>Sample Product</td>
+                                                                    <td>$10.00</td>
+                                                                    <td>2</td>
+                                                                    <td><input type="text" value="1" class="form-control"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn-black">Add To Cart</button>
+                                                    <button type="button" class="btn-black" data-dismiss="modal">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="right-blk pos-sticky">
+                                <div class="colored-blk">
+                                    <h2 class="heading2" style="font-size: 18px; font-weight: 600;text-transform: uppercase;padding: 13px 15px;border-bottom: 1px solid #dadada;background: #f4f4f4;">Order Summary</h2>
+                                    <ul style="padding: 0 15px;">
+                                        <li>Total Items <span>{{cartItems.length}}</span></li>
+                                        <li>Order Subtotal <span>{{ subtotal.toFixed(2) }}</span></li>
+                                        <li style="color: #022f60;font-size: 18px;font-weight: 600;border-top: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;padding: 15px 0;margin: 20px 0 10px; text-transform: uppercase;">Estimated Total<span>{{total.toFixed(2)}}</span></li>
+                                        <li style="color: #022f60;font-size: 18px;font-weight: 600; text-transform: uppercase;padding: 5px 0 15px;">Total CV<span>{{totalCV}}</span></li>
+                                    </ul>
+                                    <div style="border-top: 1px solid #dadada;">
+                                        <a class="btn-black-radius" style="background: #022f60; color: #fff !important; cursor: pointer;">SUBMIT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="recom-products box-shadow">
+  <div class="container">
+    <div class="row">
+      <h2 class="heading1 text-center">You May Like This</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of productsdata">
+        <div class="prod">
+          <a href="#">
+            <div class="top-image">
+              <img [src]="product.pkgimage" [alt]="product.pkname">
+              <h4 class="heading3">{{ product.pkname }}</h4>
+            </div>
+            <div class="mid-content">
+              <div class="ratings">
+                <p>Product Code : {{ product.pkcode }}</p>
+              </div>
+              <div class="cost">
+                <h6 class="heading4">{{ product.mrp }}</h6>
+              </div>
+            </div>
+            <p class="ddc-price">
+              <strong>DDC/DD Price:</strong> {{ product.currency || 'INR' }} {{ product.ddcPrice }}
+            </p>
+
+            <!-- Stock Status -->
+            <p class="stock-status " [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
+              ✔ {{ product.inStock ? 'Out of Stock' : 'In Stock' }}
+            </p>
+
+            <!-- Quantity Controls -->
+            <div class="quantity-controls">
+              <button (click)="decreaseQty(product)" class="w-25 p-1 decrement-increment">-</button>
+              <input type="text" [value]="1" readonly class="w-25 p-1 quantity-text ">
+              <button (click)="increaseQty(product)" class="w-25 p-1 decrement-increment">+</button>
+              <button class="p-2 ms-2 cart" (click)="addToCart(product)">
+                🛒
+              </button>
+            </div>
+
+            <!-- Add to Cart -->
+
+
+            <div class="btn-content">
+              <a [routerLink]="['/productcatdetails', product.pkcode]">View Details</a>
+              <!-- <a href="/productcatdetails">view details</a> -->
+            </div>
+
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        </div>
+    </div>
+</div>
