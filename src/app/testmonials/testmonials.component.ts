@@ -1,7 +1,7 @@
-import { CommonModule, JsonPipe } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { environment } from '../../environments/environment';
+import { TestimonialsService } from '../services/testimonials.service';
+import { TestimonialResponse } from '../models/testimonial.models';
 
 @Component({
   selector: 'app-testmonials',
@@ -10,7 +10,8 @@ import { environment } from '../../environments/environment';
   styleUrl: './testmonials.component.scss'
 })
 export class TestmonialsComponent implements OnInit {
-  http = inject(HttpClient);
+  service = inject(TestimonialsService);
+
   testimonials = [
     { image: 'assets/images/0.jpg', link: '#full-of-energy', title: 'full of energy' },
     { image: 'assets/images/10.jpg', link: '#army-vateran', title: 'Testimony by US Army War Veteran' },
@@ -20,19 +21,17 @@ export class TestmonialsComponent implements OnInit {
     { image: 'assets/images/15.jpg', link: '#heartproblems', title: 'Great Relieve from Stroke and Heart Problems' }
   ];
 
-  test = signal<any>({});
-  testimonialEndPoint = "/testimonials";
+  test = signal<TestimonialResponse[]>([]);
 
   ngOnInit(): void {
     this.fetchTestimonials();
   }
 
   fetchTestimonials() {
-    this.http.get<any>("https://localhost:44322" + this.testimonialEndPoint).subscribe({
+    const params = {}
+    this.service.getTestimonials<TestimonialResponse[]>(params as any).subscribe({
       next: (res) => this.test.set(res),
       error: err => console.error(err)
     })
   }
-
-
 }
