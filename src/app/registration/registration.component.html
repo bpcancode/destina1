@@ -22,11 +22,11 @@
       <div class="row text-center justify-content-center" *ngIf="!selectedCountry">
         <div
           class="col-6 col-sm-4 col-md-3 mb-4"
-          *ngFor="let item of countryList; let i = index; trackBy: trackByIndex"
+          *ngFor="let item of countries | async; let i = index; trackBy: trackByIndex"
           (click)="selectCountry(item.name)"
         >
           <div class="country-box">
-            <img [src]="item.image" [alt]="item.name" />
+            <img [src]="item.countryFlag" [alt]="item.name" />
             <h5>{{ item.name }}</h5>
           </div>
         </div>

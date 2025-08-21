@@ -69,19 +69,23 @@
 <section class="vitamins-section container-fluid">
   <h2 class="section-title">Vitamins & Minerals</h2>
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins; let i = index" [class.flipped]="flippedIndexes['vitamins'] === i" (click)="flipCard('vitamins', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -95,19 +99,23 @@
 </section>
 
 <section class="vitamins-section container-fluid">
-<div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins1">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins1; let i = index" [class.flipped]="flippedIndexes['vitamins1'] === i" (click)="flipCard('vitamins1', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -124,19 +132,23 @@
  <section class="vitamins-section container-fluid">
 
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins2">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins2; let i = index" [class.flipped]="flippedIndexes['vitamins2'] === i" (click)="flipCard('vitamins2', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -152,19 +164,23 @@
 <section class="vitamins-section container-fluid">
   
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins3">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins3; let i = index" [class.flipped]="flippedIndexes['vitamins3'] === i" (click)="flipCard('vitamins3', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -180,19 +196,23 @@
 <section class="vitamins-section container-fluid">
   
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins4">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins4; let i = index" [class.flipped]="flippedIndexes['vitamins4'] === i" (click)="flipCard('vitamins4', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -208,19 +228,23 @@
 <section class="vitamins-section container-fluid">
   
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins5">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins5; let i = index" [class.flipped]="flippedIndexes['vitamins5'] === i" (click)="flipCard('vitamins5', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -236,19 +260,23 @@
 <section class="vitamins-section container-fluid">
   
 
- <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins6">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
 
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+ <div class="vitamin-card-grid">
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins6; let i = index" [class.flipped]="flippedIndexes['vitamins6'] === i" (click)="flipCard('vitamins6', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>
@@ -268,18 +296,23 @@
 <section class="vitamins-section container-fluid">
   <h1 class="section-title">Raw Superfoods, Greens, Fruits & Herbs Complex</h1>
 
+
  <div class="vitamin-card-grid">
-  <div class="vitamin-card" *ngFor="let vitamin of vitamins7">
-    <img [src]="vitamin.img" [alt]="vitamin.title" />
-    <div class="vitamin-body">
-      <h5>{{ vitamin.title }}</h5>
-      <p>{{ vitamin.desc }}</p>
-      <div class="plus-icon">
-        <!-- <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
-          <path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"/>
-          <path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path>
-        </svg> -->
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+  <div class="flip-card vitamin-card" *ngFor="let vitamin of vitamins7; let i = index" [class.flipped]="flippedIndexes['vitamins7'] === i" (click)="flipCard('vitamins7', i)">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img [src]="vitamin.img" [alt]="vitamin.title" />
+        <div class="vitamin-body">
+          <h5>{{ vitamin.title }}</h5>
+          <p>{{ vitamin.desc }}</p>
+          <div class="plus-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_171_417)"><g filter="url(#filter0_b_171_417)"><path d="M24 0L40.973 7.02703L48 24L40.973 40.973L24 48L7.02703 40.973L0 24L7.02703 7.02703L24 0Z" fill="white" fill-opacity="0.8"></path><path d="M7.40974 7.40974L24 0.541158L40.5903 7.40974L47.4588 24L40.5903 40.5903L24 47.4588L7.40974 40.5903L0.541158 24L7.40974 7.40974Z" stroke="#002F5F"></path></g><path d="M33 24H15" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path><path d="M24 15V33" stroke="#002F5F" stroke-width="2" stroke-linecap="square"></path></g><defs><filter id="filter0_b_171_417" x="-12" y="-12" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood><feGaussianBlur in="BackgroundImageFix" stdDeviation="6"></feGaussianBlur><feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_171_417"></feComposite><feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_171_417" result="shape"></feBlend></filter><clipPath id="clip0_171_417"><rect width="48" height="48" fill="white"></rect></clipPath></defs></svg>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back d-flex flex-column justify-content-center align-items-center">
+        <h5>{{ vitamin.title }}</h5>
+        <p>Detail about the ingredient goes here. This is a hardcoded string for demo.</p>
       </div>
     </div>
   </div>

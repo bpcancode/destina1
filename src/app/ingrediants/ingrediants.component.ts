@@ -19,34 +19,35 @@ interface Card {
   standalone: true,
   selector: 'app-ingredients',
   imports: [CommonModule],
-templateUrl: './ingrediants.component.html',
-styleUrls: ['./ingrediants.component.scss'],
-
+  templateUrl: './ingrediants.component.html',
+  styleUrls: ['./ingrediants.component.scss'],
 })
 export class IngredientsComponent implements OnInit {
-   
   activeTabGroup = 'Essentials';
-selectedTab = 'All';
-selectedLetter = 'A';
- ngOnInit(): void {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+  selectedTab = 'All';
+  selectedLetter = 'A';
+  flippedIndexes: { [key: string]: number } = {};
 
-essentialsTabs: Tab[] = [
-  { id: 'tab1', label: 'All', code: 'All' },
-  { id: 'tab2', label: 'Vitamins & Minerals', code: 'VTM' },
-  { id: 'tab3', label: 'Raw Superfoods, Greens, Fruits & Herbs Complex', code: 'RF' },
-  { id: 'tab4', label: 'Probiotics Complex', code: 'PRO' },
-  { id: 'tab5', label: 'Joint & Muscle Vitality', code: 'JMV' },
-  { id: 'tab6', label: 'Hydra Electrolytes Complex', code: 'HEC' },
-  { id: 'tab7', label: 'Heart Health Support', code: 'HHS' },
-  { id: 'tab8', label: 'Essential Amino & Renew Complex', code: 'EAR' },
-  { id: 'tab9', label: 'CRT8', code: 'CRT8' },
-  { id: 'tab10', label: 'Postbiotics', code: 'POST' },
-  { id: 'tab11', label: 'Digestive enzymes, adaptogens & super mushrooms complex', code: 'DESC' }
-];
- ingredientCards: Card[] = [
+  ngOnInit(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+
+  essentialsTabs: Tab[] = [
+    { id: 'tab1', label: 'All', code: 'All' },
+    { id: 'tab2', label: 'Vitamins & Minerals', code: 'VTM' },
+    { id: 'tab3', label: 'Raw Superfoods, Greens, Fruits & Herbs Complex', code: 'RF' },
+    { id: 'tab4', label: 'Probiotics Complex', code: 'PRO' },
+    { id: 'tab5', label: 'Joint & Muscle Vitality', code: 'JMV' },
+    { id: 'tab6', label: 'Hydra Electrolytes Complex', code: 'HEC' },
+    { id: 'tab7', label: 'Heart Health Support', code: 'HHS' },
+    { id: 'tab8', label: 'Essential Amino & Renew Complex', code: 'EAR' },
+    { id: 'tab9', label: 'CRT8', code: 'CRT8' },
+    { id: 'tab10', label: 'Postbiotics', code: 'POST' },
+    { id: 'tab11', label: 'Digestive enzymes, adaptogens & super mushrooms complex', code: 'DESC' }
+  ];
+  ingredientCards: Card[] = [
     // Add your ingredient card data here
   ];
 
@@ -70,6 +71,15 @@ essentialsTabs: Tab[] = [
       card.title.charAt(0).toUpperCase() === this.selectedLetter
     );
   }
+
+  flipCard(section: string, index: number) {
+    if (this.flippedIndexes[section] === index) {
+      this.flippedIndexes[section] = -1;
+    } else {
+      this.flippedIndexes[section] = index;
+    }
+  }
+  // ...existing code...
 vitamins = [
   {
     title: 'Vitamin A (as Retinyl palmitate)',

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { RegisterService } from '../services/register.service';
 
 @Component({
   selector: 'app-registration',
@@ -11,6 +12,8 @@ import { RouterModule } from '@angular/router';
 })
 export class RegistrationComponent {
   isCollapsed = true;
+
+  countries: any = inject(RegisterService).getCountries();
 
   countryList = [
     {
